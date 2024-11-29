@@ -1,984 +1,1755 @@
-import Counter from "@/components/Counter";
+"use client";
 import AkpagerLayout from "@/layouts/AkpagerLayout";
-import dynamic from "next/dynamic";
+import { sliderProps } from "@/utility/sliderProps";
 import Link from "next/link";
-const TestimonialSlider = dynamic(
-  () => import("@/components/TestimonialSlider"),
-  {
-    ssr: false,
-  }
-);
+import { Nav, Tab } from "react-bootstrap";
+import Slider from "react-slick";
+import SkillSlider from "@/components/skillSlider";
+import CoursesIsotope from "@/components/isotope/CoursesIsotope";
+// Import if using a module system
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-const Index = () => {
+AOS.init({
+  duration: 1200,
+  easing: "ease-in-out",
+  once: true,
+  mirror: false,
+});
+
+window.addEventListener("load", () => {
+  AOS.refresh();
+});
+
+const page = () => {
   return (
-    <AkpagerLayout>
-      {/* Hero area start */}
+    <AkpagerLayout header={9} footer={9} bodyClass={"home-nine"} onePage={true}>
       <section
-        className="hero-area bgs-cover py-250 rpy-150 overlay"
-        style={{ backgroundImage: "url(assets/images/hero/hero-one.png)" }}
+        id="about"
+        className="hero-area-nine pt-165 rpt-150 pb-130 rpb-100 rel z-1"
       >
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-7 col-lg-10 col-md-11">
-              <div className="hero-content text-center text-white">
-                <span
-                  className="subtitle-one mb-20"
-                  data-aos="fade-up"
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
-                >
-                  <i className="fas fa-rocket-launch" /> Awards Winning Agency
-                </span>
+          <div className="row gap-70 align-items-center">
+            <div className="col-lg-6">
+              <div
+                className="hero-content style-nine mb-100 rmb-55"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
                 <h1
                   data-aos="fade-up"
-                  data-aos-delay={200}
+                  data-aos-delay={50}
                   data-aos-duration={1500}
                   data-aos-offset={50}
                 >
-                  Everything you need to start and run your business grow
+                  Hi, I’m{" "}
+                  <span style={{ color: "#9000ff" }}>Rahman Karim!</span>
                 </h1>
-                <div
-                  className="hero-btns"
-                  data-aos="fade-up"
-                  data-aos-delay={400}
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
-                >
-                  <Link href="/about" legacyBehavior>
-                    <a className="theme-btn">
-                      Learn More <i className="far fa-arrow-right" />
-                    </a>
-                  </Link>
-                  <Link href="/services" legacyBehavior>
-                    <a className="theme-btn style-two">
-                      Our Services <i className="far fa-arrow-right" />
-                    </a>
-                  </Link>
+                <p>MERN Stack Developer</p>
+                <p>
+                  I build dynamic, user-centric web apps, blending front-end and
+                  back-end expertise to craft seamless, responsive experiences.
+                </p>
+                {/* <form className="newsletter-form mt-40" action="#">
+                  <label htmlFor="email-address">
+                    <i className="fas fa-envelope" />
+                  </label>
+                  <input
+                    id="email-address"
+                    type="email"
+                    placeholder="Email Address"
+                    required=""
+                  />
+                  <button type="submit">
+                    <b>
+                      Free Trail <i className="far fa-arrow-right" />
+                    </b>
+                  </button>
+                </form>
+                <ul className="icon-list pt-15">
+                  <li>
+                    <i className="fal fa-check" /> Free 14-day trial
+                  </li>
+                  <li>
+                    <i className="fal fa-check" /> No credit card required
+                  </li>
+                </ul> */}
+              </div>
+            </div>
+            <div
+              className="col-lg-6"
+              data-aos="fade-up"
+              data-aos-delay={100}
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <div className="hero-nine-image">
+                <img src="assets/images/rahman karim/hi.png" alt="Hero" />
+                <div className="shapes">
+                  {/* <div
+                    className="shape one"
+                    data-aos="zoom-in-left"
+                    data-aos-duration={1500}
+                    data-aos-offset={50}
+                  >
+                    <img
+                      src="assets/images/shapes/hero-nine1.png"
+                      alt="Shape"
+                    />
+                  </div> */}
+                  <div
+                    className="shape two"
+                    data-aos="zoom-in-right"
+                    data-aos-duration={1500}
+                    data-aos-offset={50}
+                  >
+                    <img
+                      src="assets/images/rahman karim/tango rose.png"
+                      alt="Shape"
+                    />
+                  </div>
+                  {/* <div
+                    className="shape three"
+                    data-aos="zoom-in-left"
+                    data-aos-delay={100}
+                    data-aos-duration={1500}
+                    data-aos-offset={50}
+                  >
+                    <img
+                      src="assets/images/shapes/hero-nine3.png"
+                      alt="Shape"
+                    />
+                  </div> */}
+                  {/* <div
+                    className="shape four"
+                    data-aos="zoom-in-right"
+                    data-aos-delay={100}
+                    data-aos-duration={1500}
+                    data-aos-offset={50}
+                  >
+                    <img
+                      src="assets/images/shapes/hero-nine4.png"
+                      alt="Shape"
+                    />
+                  </div> */}
+                  {/* <div
+                    className="shape five"
+                    data-aos="zoom-in-left"
+                    data-aos-delay={200}
+                    data-aos-duration={1500}
+                    data-aos-offset={50}
+                  >
+                    <img
+                      src="assets/images/rahman karim/drinking alone.png"
+                      alt="Shape"
+                    />
+                  </div> */}
+                  {/* <div
+                    className="shape six"
+                    data-aos="zoom-in-right"
+                    data-aos-delay={200}
+                    data-aos-duration={1500}
+                    data-aos-offset={50}
+                  >
+                    <img
+                      src="assets/images/shapes/hero-nine6.png"
+                      alt="Shape"
+                    />
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div className="hero-nine-shapes">
+          <div className="shape one">
+            <img src="assets/images/shapes/hero-nine.png" alt="Shape" />
+          </div>
+          <div className="shape two">
+            <img src="assets/images/shapes/hero-nine.png" alt="Shape" />
+          </div>
+        </div>
       </section>
       {/* Hero area End */}
-      {/* Services Area Start */}
-      <section
-        className="services-area bgp-bottom bgc-navyblue pb-55 rel z-2"
-        style={{
-          backgroundImage: "url(assets/images/backgrounds/wave-shape.png)",
-        }}
-      >
+      {/* Client Logo Area Start */}
+      <section className="client-logo-area pt-100 pb-90 rpb-60 rel z-2">
         <div className="container">
-          <div className="services-wrap">
-            <div className="row justify-content-center">
+          <div className="row justify-content-center">
+            <div className="col-xl-8 col-lg-9 col-md-11">
               <div
-                className="col-xl-4 col-md-6"
+                className="section-title text-center mb-60"
                 data-aos="fade-up"
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                <div className="iconic-box">
-                  <div className="icon">
-                    <i className="flaticon-customer-service-1" />
-                  </div>
-                  <div className="content">
-                    <h4>
-                      <Link legacyBehavior href="service-details">
-                        Best Quality Services
-                      </Link>
-                    </h4>
-                    <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem
-                    </p>
-                    <hr />
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/iconic-box-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
+                {/* <span className="subtitle-three mb-10">
+                  Meet Our Global Clients
+                </span> */}
+                <h1>Education</h1>
               </div>
+            </div>
+          </div>
+          {/* <div className="row align-items-center justify-content-center row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2">
+            <div className="col">
               <div
-                className="col-xl-4 col-md-6"
+                className="client-logo-item style-four py-45 rpy-25"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <a href="#">
+                  <img
+                    src="assets/images/client-logos/client-logo1.png"
+                    alt="Client Logo"
+                  />
+                </a>
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="client-logo-item style-four py-65 rpy-25"
+                data-aos="fade-up"
+                data-aos-delay={50}
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <a href="#">
+                  <img
+                    src="assets/images/client-logos/client-logo2.png"
+                    alt="Client Logo"
+                  />
+                </a>
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="client-logo-item style-four py-45 rpy-25"
                 data-aos="fade-up"
                 data-aos-delay={100}
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                <div className="iconic-box">
-                  <div className="icon">
-                    <i className="flaticon-idea" />
-                  </div>
-                  <div className="content">
-                    <h4>
-                      <Link legacyBehavior href="service-details">
-                        Innovation Ideas
-                      </Link>
-                    </h4>
-                    <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem
-                    </p>
-                    <hr />
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/iconic-box-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
+                <a href="#">
+                  <img
+                    src="assets/images/client-logos/client-logo3.png"
+                    alt="Client Logo"
+                  />
+                </a>
               </div>
+            </div>
+            <div className="col">
               <div
-                className="col-xl-4 col-md-6"
+                className="client-logo-item style-four py-65 rpy-25"
+                data-aos="fade-up"
+                data-aos-delay={150}
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <a href="#">
+                  <img
+                    src="assets/images/client-logos/client-logo4.png"
+                    alt="Client Logo"
+                  />
+                </a>
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="client-logo-item style-four py-45 rpy-25"
                 data-aos="fade-up"
                 data-aos-delay={200}
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                <div className="iconic-box">
-                  <div className="icon">
-                    <i className="flaticon-earning" />
+                <a href="#">
+                  <img
+                    src="assets/images/client-logos/client-logo5.png"
+                    alt="Client Logo"
+                  />
+                </a>
+              </div>
+            </div>
+          </div> */}
+        </div>
+      </section>
+      {/* Client Logo Area End */}
+      {/* Tab Area Start */}
+      <section className="advanced-tab-area pb-130 rpb-100">
+        <div className="container">
+          <Tab.Container defaultActiveKey={"tabOne1"}>
+            <Nav
+              as={"ul"}
+              className="nav advanced-tab mb-55"
+              role="tablist"
+              data-aos="fade-up"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <Nav.Item as={"li"}>
+                <Nav.Link as={"button"} eventKey="tabOne1">
+                  <i className="far fa-arrow-right" />
+                  School
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item as={"li"}>
+                <Nav.Link as={"button"} eventKey="tabOne2">
+                  <i className="far fa-arrow-right" /> College
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item as={"li"}>
+                <Nav.Link as={"button"} eventKey="tabOne3">
+                  <i className="far fa-arrow-right" /> University
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item as={"li"}>
+                <Nav.Link as={"button"} eventKey="tabOne4">
+                  <i className="far fa-arrow-right" /> Jobs &amp; Internships
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item as={"li"}>
+                <Nav.Link as={"button"} eventKey="tabOne5">
+                  <i className="far fa-arrow-right" /> Volunteer work
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+            <Tab.Content className="tab-content">
+              <Tab.Pane className="tab-pane fade" eventKey="tabOne1">
+                <div className="row align-items-center justify-content-between">
+                  <div className="col-lg-6">
+                    <div className="content rmb-55">
+                      <div className="section-title mb-30">
+                        <h2>
+                          Hasegawa Memorial Public School and College Karimabad
+                          Hunza
+                        </h2>
+                      </div>
+                      <p>
+                        At Hasegawa Memorial Public School and College, I gained
+                        foundational skills in academics and extracurricular
+                        activities. Throughout my time here, I developed key
+                        competencies in Microsoft Excel and Word, along with
+                        soft skills such as effective communication and
+                        presentation abilities, which have been essential in
+                        both academic and personal growth.
+                      </p>
+                      <ul className="icon-list mt-20 mb-40">
+                        <li>
+                          <i className="fal" /> Matriculation (Science)
+                        </li>
+                        <li>
+                          <i className="fal fa-date" />
+                          Jan 2007 - Jan 2018
+                        </li>
+                      </ul>
+                      {/* <a href="#" className="theme-btn style-two">
+                        Learn More <i className="far fa-arrow-right" />
+                      </a> */}
+                    </div>
                   </div>
-                  <div className="content">
-                    <h4>
-                      <Link legacyBehavior href="service-details">
-                        Business Growth
-                      </Link>
-                    </h4>
-                    <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem
-                    </p>
-                    <hr />
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/iconic-box-bg.png"
-                      alt="Shape"
-                    />
+                  <div className="col-xl-5 col-lg-6">
+                    <div className="image">
+                      <img
+                        src="assets/images/rahman karim/homework.png"
+                        alt="Tab"
+                      />
+                    </div>
                   </div>
                 </div>
+              </Tab.Pane>
+              <Tab.Pane className="tab-pane fade" eventKey="tabOne2">
+                <div className="row align-items-center justify-content-between">
+                  <div className="col-xl-5 col-lg-6">
+                    <div
+                      className="image"
+                      data-aos="fade-left"
+                      data-aos-duration={1500}
+                      data-aos-offset={50}
+                    >
+                      <img
+                        src="assets/images/rahman karim/i hate homework.png"
+                        alt="Tab"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div
+                      className="content rmt-55"
+                      data-aos="fade-right"
+                      data-aos-duration={1500}
+                      data-aos-offset={50}
+                    >
+                      <div className="section-title mb-30">
+                        <h2>
+                          The Innova Academy School and College Jutial Gilgit
+                        </h2>
+                      </div>
+                      <p>
+                        During my time at The Innova Academy, I specialized in
+                        Computer Science (ICS), where I honed my programming
+                        skills in C and developed proficiency in Microsoft Excel
+                        and Word. I also enhanced my presentation skills and
+                        became adept at presentation development, preparing me
+                        to communicate technical ideas effectively and
+                        confidently.
+                      </p>
+                      <ul className="icon-list mt-20 mb-40">
+                        <li>
+                          <i className="fal" /> ICS (Intermediate Computer
+                          Science)
+                        </li>
+                        <li>
+                          <i className="fal " /> 2019 – 2021
+                        </li>
+                        {/* <li>
+                          <i className="fal fa-check" /> Message Experience
+                        </li> */}
+                      </ul>
+                      {/* <a href="#" className="theme-btn style-two">
+                        Learn More <i className="far fa-arrow-right" />
+                      </a> */}
+                    </div>
+                  </div>
+                </div>
+              </Tab.Pane>
+              <Tab.Pane className="tab-pane fade" eventKey="tabOne3">
+                <div className="row align-items-center justify-content-between">
+                  <div className="col-lg-6">
+                    <div className="content rmb-55">
+                      <div className="section-title mb-30">
+                        <h2>COMSATS University Islamabad, Lahore Campus</h2>
+                      </div>
+                      <p>
+                        At COMSATS, I am pursuing a Bachelor’s in Computer
+                        Science, where I am deepening my understanding of
+                        programming languages such as C and Java, and exploring
+                        key topics like Data Structures and Object-Oriented
+                        Programming (OOP). I have also developed skills in
+                        project planning, presentation development, and
+                        communication, essential for both academic and
+                        professional growth. Outside of academics, I actively
+                        participate in football and volleyball, enhancing my
+                        teamwork and leadership abilities.
+                      </p>
+                      <ul className="icon-list mt-20 mb-40">
+                        <li>
+                          <i className="fal" /> BS in Computer Science
+                        </li>
+                        <li>
+                          <i className="fal " />
+                          Feb 2022 – Present
+                        </li>
+                        {/* <li>
+                          <i className="fal fa-check" /> Message Experience
+                        </li> */}
+                      </ul>
+                      {/* <a href="#" className="theme-btn style-two">
+                        Learn More <i className="far fa-arrow-right" />
+                      </a> */}
+                    </div>
+                  </div>
+                  <div className="col-xl-5 col-lg-6">
+                    <div className="image">
+                      <img
+                        src="assets/images/rahman karim/sticker (6).png"
+                        alt="Tab"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Tab.Pane>
+              <Tab.Pane className="tab-pane fade" eventKey="tabOne4">
+                <div className="row align-items-center justify-content-between">
+                  <div className="col-xl-5 col-lg-6">
+                    <div className="image">
+                      <img
+                        src="assets/images/rahman karim/sleep glasses.png"
+                        alt="Tab"
+                      />{" "}
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div className="content rmt-55">
+                      <div className="section-title mb-30">
+                        <h2>Intern, Crogics Pvt Ltd </h2>
+                      </div>
+                      <p>
+                        As an intern at Crogics Pvt Ltd, I am working as a MERN
+                        Stack Developer, gaining hands-on experience in Node.js
+                        and tackling real-world problem-solving challenges. I am
+                        actively involved in backend development, refining my
+                        skills in database management, APIs, and JavaScript.
+                        Additionally, I am enhancing my expertise in project
+                        collaboration, version control, and continuous learning,
+                        while contributing to a range of projects that
+                        strengthen my development and technical problem-solving
+                        abilities across the MERN stack.
+                      </p>
+                      <ul className="icon-list mt-20 mb-40">
+                        <li>
+                          <i className="fal " /> Feb 2024 – Present
+                        </li>
+                      </ul>
+                      {/* <a href="#" className="theme-btn style-two">
+                        Learn More <i className="far fa-arrow-right" />
+                      </a> */}
+                    </div>
+                  </div>
+                </div>
+              </Tab.Pane>
+              <Tab.Pane className="tab-pane fade" eventKey="tabOne5">
+                <div className="row align-items-center justify-content-between">
+                  <div className="col-lg-6">
+                    <div className="content rmb-55">
+                      <div className="section-title mb-30">
+                        <h2>Patrol Leader (PL)</h2>
+                      </div>
+                      <p>
+                        As a volunteer Patrol Leader in Hunza, Pakistan, I have
+                        had the privilege of contributing to community
+                        development and youth empowerment in a region celebrated
+                        for its natural beauty and rich cultural heritage. I led
+                        various scouting activities, such as outdoor adventures,
+                        educational workshops, and community service projects,
+                        with a focus on developing leadership skills, teamwork,
+                        and environmental awareness among local youth.
+                      </p>
+                      <ul className="icon-list mt-20 mb-40">
+                        <li>
+                          <i className="fal" /> Ismaili Boy Scouts
+                        </li>
+                        <li>
+                          <i className="fal" /> Jan 2012 – Present (12 yrs 11
+                          mo)
+                        </li>
+                        {/* <li>
+                          <i className="fal " />
+                          Feb 2022 – Present
+                        </li> */}
+                        {/* <li>
+                          <i className="fal fa-check" /> Message Experience
+                        </li> */}
+                      </ul>
+                      {/* <a href="#" className="theme-btn style-two">
+                        Learn More <i className="far fa-arrow-right" />
+                      </a> */}
+                    </div>
+                    <div className="content rmb-55">
+                      <div className="section-title mb-30">
+                        <h2>Tour Manager</h2>
+                      </div>
+                      <p>
+                        As a volunteer Tour Manager at Baltit Fort, a historic
+                        site under the Aga Khan Development Network (AKDN), I
+                        played a key role in enhancing the visitor experience
+                        while promoting the fort’s rich history and cultural
+                        significance. My responsibilities included leading
+                        engaging and informative tours, sharing insights into
+                        the fort's historical and architectural heritage, and
+                        addressing visitor inquiries. I focused on creating a
+                        welcoming atmosphere, offering personalized
+                        recommendations to ensure a memorable experience for
+                        every guest.
+                      </p>
+                      <ul className="icon-list mt-20 mb-40">
+                        <li>
+                          <i className="fal " /> Aga Khan Development Network
+                        </li>
+                        <li>
+                          <i className="fal" /> Jan 2018 – Jan 2019 (1 yr 1 mo)
+                        </li>
+                        {/* <li>
+                          <i className="fal " />
+                          Feb 2022 – Present
+                        </li> */}
+                        {/* <li>
+                          <i className="fal fa-check" /> Message Experience
+                        </li> */}
+                      </ul>
+                      {/* <a href="#" className="theme-btn style-two">
+                        Learn More <i className="far fa-arrow-right" />
+                      </a> */}
+                    </div>
+                  </div>
+                  <div className="col-xl-5 col-lg-6">
+                    <div className="image">
+                      <img
+                        src="assets/images/rahman karim/koala friend.png"
+                        alt="Tab"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Tab.Pane>
+            </Tab.Content>
+          </Tab.Container>
+        </div>
+      </section>
+      {/* Tab Area End */}
+      {/* Services Area Start */}
+      <section
+        id="services"
+        className="service-area-nine bgc-black pt-130 rpt-100 pb-100 rpb-70"
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xl-9 col-lg-11">
+              <div
+                className="section-title text-center text-white mb-55"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <h1>Area of Work</h1>
               </div>
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-xl-9">
-              <blockquote
-                className="blockquote-one text-white"
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="iconic-box style-three"
                 data-aos="fade-up"
-                data-aos-duration={1000}
+                data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                <div className="text">
-                  Business consulting involves the provision expert advice and
-                  guidance to organizations seeking to improve their
-                  performance, solve specific problems, or achieve specific
-                  objectives. The primary purpose of business consultants is to
-                  leverage their expertise and experience to help clients make
-                  informed decisions, develop strategies, and implement
+                <div className="icon webIcon">
+                  <img src="assets/images/icons/web.png" alt="Icon" />
                 </div>
-                <div className="author">
-                  <img src="assets/images/blog/blockquote.png" alt="Author" />
-                  <div className="name">
-                    <h5>Ricky J. Winter/</h5> <span>CEO &amp; Founder</span>
-                  </div>
+                <div className="content">
+                  <h5 style={{ color: "white" }}>Web Development</h5>
+
+                  <p>
+                    I focus on seamless user experiences and efficient backend
+                    solutions
+                  </p>
                 </div>
-              </blockquote>
+                <div className="bg">
+                  <img
+                    src="assets/images/shapes/iconic-box-three-bg.png"
+                    alt="Shape"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="iconic-box style-three"
+                data-aos="fade-up"
+                data-aos-delay={50}
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <div className="icon">
+                  <img src="assets/images/icons/iconic-box2.png" alt="Icon" />
+                </div>
+                <div className="content">
+                  <h5 style={{ color: "white" }}>Artificial intelligence</h5>
+
+                  <p>
+                    I develop intelligent systems that provide support and
+                    experiences
+                  </p>
+                </div>
+                <div className="bg">
+                  <img
+                    src="assets/images/shapes/iconic-box-three-bg.png"
+                    alt="Shape"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="iconic-box style-three"
+                data-aos="fade-up"
+                data-aos-delay={100}
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <div className="icon">
+                  <img src="assets/images/icons/iconic-box3.png" alt="Icon" />
+                </div>
+                <div className="content">
+                  <h5 style={{ color: "white" }}>Mobile Development</h5>
+
+                  <p>
+                    I create smooth, cross-platform mobile apps with React
+                    Native and Expo
+                  </p>
+                </div>
+                <div className="bg">
+                  <img
+                    src="assets/images/shapes/iconic-box-three-bg.png"
+                    alt="Shape"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="iconic-box style-three"
+                data-aos="fade-up"
+                data-aos-delay={150}
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <div className="icon webIcon">
+                  <img src="assets/images/icons/game.png" alt="Icon" />
+                </div>
+                <div className="content">
+                  <h5 style={{ color: "white" }}>Game Development</h5>
+
+                  <p>
+                    I build engaging games with interactive designs and
+                    immersive experiences
+                  </p>
+                </div>
+                <div className="bg">
+                  <img
+                    src="assets/images/shapes/iconic-box-three-bg.png"
+                    alt="Shape"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      {/* Services Area End */}
-      {/* About Area Start */}
-      <section className="about-area py-90 rpy-60">
+      {/* <SkillSlider /> */}
+      <section className="marquee-iconic-box-area pt-60 rpt-40 pb-50">
+        <div
+          className="section-title text-center text-white mb-55"
+          data-aos="fade-up"
+          data-aos-duration={1500}
+          data-aos-offset={50}
+        >
+          <h1>Skills and languages</h1>
+        </div>
+        <Slider
+          {...sliderProps.marqueeSliderLeft}
+          className="marquee-slider-right iconic-slider-right"
+        >
+          <div className="marquee-iconic-box d-flex">
+            <div className="icon color-six">
+              <i className="flaticon-pen-tool" />
+            </div>
+            <div className="content">
+              <h6 className="title">UI/UX Design</h6>
+              {/* <span className="subtitle">5+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div className="icon color-seven">
+              <i className="flaticon-goal-1" />
+            </div>
+            <div className="content">
+              <h6 className="title">Leadership Skill</h6>
+              {/* <span className="subtitle">8+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div className="icon color-eight">
+              <i className="flaticon-code" />
+            </div>
+            <div className="content">
+              <h6 className="title">Web Development</h6>
+              <span className="subtitle">10+ Projects</span>
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div className="icon color-four">
+              <i className="flaticon-megaphone" />
+            </div>
+            <div className="content">
+              <h6 className="title">Mobile App Development</h6>
+              <span className="subtitle">8+ Projects</span>
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div className="icon color-six">
+              <i className="flaticon-new-job" />
+            </div>
+            <div className="content">
+              <h6 className="title">MERN Stack Development</h6>
+              <span className="subtitle">10+ Projects</span>
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div className="icon color-nine">
+              <i className="flaticon-diaphragm" />
+            </div>
+            <div className="content">
+              <h6 className="title">Photography</h6>
+              {/* <span className="subtitle">3+ Course</span> */}
+            </div>
+          </div>
+        </Slider>
+        <Slider
+          {...sliderProps.marqueeSliderRight}
+          className="marquee-slider-left iconic-slider-left"
+          dir="rtl"
+        >
+          <div className="marquee-iconic-box d-flex">
+            <div className="icon " style={{ background: "transparent" }}>
+              <img src="assets/images/launguages/Cpp.avif" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">C++</h6>
+              <span className="subtitle"></span>
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img
+                className="imageLaungauge"
+                src="assets/images/launguages/Javascript.png"
+                alt="Hero"
+              />
+            </div>
+            <div className="content">
+              <h6 className="title">JavaScript</h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img
+                className="imageLaungauge"
+                src="assets/images/launguages/html.png"
+                alt="Hero"
+              />
+            </div>
+            <div className="content">
+              <h6 className="title">HTML5 </h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/CSS.png" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">CSS </h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/Python.png" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">Python </h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/ts.png" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">Typescript </h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/bootstrap.png" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">Bootstrap </h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/java.png" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">Java </h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/node.png" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">Node js </h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/mongo.png" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">Mongo DB</h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/react.svg" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">React.Js</h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+          <div className="marquee-iconic-box d-flex">
+            <div
+              className="icon"
+              style={{ background: "transparent", borderRadius: "31px" }}
+            >
+              <img src="assets/images/launguages/next.png" alt="Hero" />
+            </div>
+            <div className="content">
+              <h6 className="title">Next.Js</h6>
+              {/* <span className="subtitle">9+ Course</span> */}
+            </div>
+          </div>
+        </Slider>
+      </section>
+      <section
+        id="about"
+        className="about-area-nine bgc-black pb-110 rpb-80 rel z-1"
+      >
         <div className="container">
           <div className="row gap-90 align-items-center">
             <div className="col-lg-6">
               <div
-                className="about-images my-40"
-                data-aos="fade-left"
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <img src="assets/images/about/about.jpg" alt="About" />
-                <div className="about-over">
-                  <img src="assets/images/about/about2.png" alt="About" />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div
-                className="about-content mt-40 rmt-15"
+                className="about-content-nine text-white rmb-35"
                 data-aos="fade-right"
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
                 <div className="section-title mb-30">
-                  <h2>
-                    Discover Our Company's Vision and Commitment to Excellence
-                  </h2>
+                  <h2>Cocurricular Activities</h2>
                 </div>
                 <p>
-                  Business consulting is a dynamic and multifaceted field that
-                  plays a pivotal role in helping organizations thrive in
-                  today's competitive landscape. These consulting services are
-                  sought after by businesses of all sizes
+                  I am an avid sports enthusiast who enjoys staying active and
+                  embracing challenges.
                 </p>
-                <div className="row pt-30">
-                  <div className="col-sm-6">
-                    <div className="counter-item counter-text-wrap counted">
-                      <span
-                        className="count-text percent"
-                        data-speed={3000}
-                        data-stop={95}
-                      >
-                        95
-                      </span>
-                      <h5 className="counter-title">Strategy Consulting</h5>
-                      <div className="text">
-                        Strategy consultants work closely organizations define
-                        their
-                      </div>
-                    </div>
+                <div className="feature-icon-box mt-35">
+                  <div className="icon">
+                    <i className="far" />
                   </div>
-                  <div className="col-sm-6">
-                    <div className="counter-item counter-text-wrap counted">
-                      <span
-                        className="count-text percent"
-                        data-speed={3000}
-                        data-stop={85}
-                      >
-                        85
-                      </span>
-                      <h5 className="counter-title">Financial Consulting</h5>
-                      <div className="text">
-                        Financial consultants provides the financial planning,
-                        budgeting
-                      </div>
-                    </div>
+                  <div className="content">
+                    <p>
+                      I play football and volleyball, which have taught me
+                      teamwork, strategy, and discipline. Swimming is another
+                      passion of mine, as it helps me maintain physical fitness
+                      while being incredibly refreshing.
+                    </p>
                   </div>
                 </div>
+                <div className="feature-icon-box">
+                  <div className="icon">
+                    <i className="far " />
+                  </div>
+                  <div className="content">
+                    <p>
+                      Additionally, I have a deep love for hiking and
+                      mountaineering, where I explore nature’s beauty, test my
+                      endurance, and experience the thrill of conquering new
+                      heights. These activities not only keep me physically fit
+                      but also help me develop resilience and a sense of
+                      adventure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div
+                className="about-nine-right-images mb-20 text-lg-end"
+                data-aos="fade-left"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <img
+                  src="assets/images/rahman karim/sticker (7).png"
+                  alt="About"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* About Area End */}
-      {/* Solutions Area End */}
-      <section className="solutions-area pb-100 rpb-70">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-7 col-lg-9 col-md-11">
-              <div
-                className="section-title text-center mb-60"
-                data-aos="fade-up"
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <h2>Discover Company Solutions Tailored to Your Needs</h2>
-                <p>
-                  Sed ut perspiciatis unde omnis iste sit voluptatem accusantium
-                  doloremque laudantium rem aperiam eaqups quae ab illo
-                  inventore veritatis et quasi architecto{" "}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="fancy-box"
-                data-aos="fade-up"
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box1.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <div className="icon-title">
-                    <i className="flaticon-meeting" />
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Business Consulting
-                      </Link>
-                    </h5>
-                  </div>
-                  <div className="inner-content">
-                    <p>
-                      Assisting clients with financial planning, budgeting,
-                      investment strategies
-                    </p>
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="fancy-box"
-                data-aos="fade-up"
-                data-aos-delay={200}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box2.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <div className="icon-title">
-                    <i className="flaticon-financial-advisor" />
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Financial Advisory
-                      </Link>
-                    </h5>
-                  </div>
-                  <div className="inner-content" style={{ display: "none" }}>
-                    <p>
-                      Assisting clients with financial planning, budgeting,
-                      investment strategies
-                    </p>
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="fancy-box"
-                data-aos="fade-up"
-                data-aos-delay={400}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box3.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <div className="icon-title">
-                    <i className="flaticon-meeting" />
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Marketing &amp; Branding
-                      </Link>
-                    </h5>
-                  </div>
-                  <div className="inner-content" style={{ display: "none" }}>
-                    <p>
-                      Assisting clients with financial planning, budgeting,
-                      investment strategies
-                    </p>
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="fancy-box"
-                data-aos="fade-up"
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box4.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <div className="icon-title">
-                    <i className="flaticon-brand-identity" />
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Marketing &amp; Branding
-                      </Link>
-                    </h5>
-                  </div>
-                  <div className="inner-content" style={{ display: "none" }}>
-                    <p>
-                      Assisting clients with financial planning, budgeting,
-                      investment strategies
-                    </p>
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="fancy-box"
-                data-aos="fade-up"
-                data-aos-delay={200}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box5.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <div className="icon-title">
-                    <i className="flaticon-technology" />
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        IT and Technology
-                      </Link>
-                    </h5>
-                  </div>
-                  <div className="inner-content" style={{ display: "none" }}>
-                    <p>
-                      Assisting clients with financial planning, budgeting,
-                      investment strategies
-                    </p>
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="fancy-box"
-                data-aos="fade-up"
-                data-aos-delay={400}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box6.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <div className="icon-title">
-                    <i className="flaticon-talent-search" />
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Human Resources
-                      </Link>
-                    </h5>
-                  </div>
-                  <div className="inner-content" style={{ display: "none" }}>
-                    <p>
-                      Assisting clients with financial planning, budgeting,
-                      investment strategies
-                    </p>
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Solutions Area End */}
-      {/* CTA Area Start */}
+      {/* Feature Image box Area Start */}
       <section
-        className="cta-area bgs-cover py-130 rpy-100"
-        style={{ backgroundImage: "url(assets/images/backgrounds/cta.jpg)" }}
+        id="features"
+        className="feature-image-box-area pt-130 rpt-100 pb-100 rpb-70"
       >
         <div className="container">
-          <div className="row align-items-center justify-content-between">
-            <div className="col-xl-6 col-lg-8">
-              <div
-                className="cta-content text-white rmb-35"
-                data-aos="fade-left"
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="section-title mb-40">
-                  <span className="subtitle d-block mb-10">
-                    Website Builder
-                  </span>
-                  <h2>Ready Work Together to Create Website?</h2>
-                </div>
-                <Link legacyBehavior href="/contact">
-                  <a className="theme-btn">
-                    Contact Us <i className="far fa-arrow-right" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div
-                className="cta-btn text-lg-center text-start ps-lg-0 ps-2"
-                data-aos="zoom-in-right"
-                data-aos-duration={1000}
-              >
-                <a
-                  href="https://www.youtube.com/watch?v=9Y7ma241N8k"
-                  className="mfp-iframe video-play"
-                >
-                  <i className="fas fa-play" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* CTA Area End */}
-      {/* Recent Projects Area End */}
-      <section className="project-area pt-130 rpt-100 pb-100 rpb-70">
-        <div className="container">
           <div className="row justify-content-center">
-            <div className="col-xl-6 col-lg-8 col-md-10">
+            <div className="col-xl-8 col-lg-11">
               <div
-                className="section-title text-center mb-60"
+                className="section-title text-center mb-55"
                 data-aos="fade-up"
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                <h2>Explore Our Recent Case Studies &amp; Projects</h2>
-                <p>
-                  Sed ut perspiciatis unde omnis iste sit voluptatem accusantium
-                  doloremque laudantium rem aperiam eaqups quae ab illo
-                  inventore veritatis et quasi architecto{" "}
-                </p>
+                <h2>My Recent Work</h2>
               </div>
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+            <div className="col-xl-4 col-md-6">
               <div
-                className="fancy-box style-two"
+                className="feature-image-box style-two"
                 data-aos="fade-up"
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box-two1.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <a href="#" className="category">
-                    Business Consulting
-                  </a>
-                  <h6>
-                    <Link legacyBehavior href="service-details">
-                      How We Transformed Client's Operations
-                    </Link>
-                  </h6>
-                  <div
-                    className="inner-content"
-                    style={{
-                      display: "block",
-                      overflow: "hidden",
-                      height: "0.0041635px",
-                      paddingTop: 0,
-                      marginTop: 0,
-                      paddingBottom: 0,
-                      marginBottom: 0,
-                    }}
-                  >
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-two-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-              <div
-                className="fancy-box style-two"
-                data-aos="fade-up"
-                data-aos-delay={200}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box-two2.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <a href="#" className="category">
-                    Financeal
-                  </a>
-                  <h6>
-                    <Link legacyBehavior href="service-details">
-                      Journey with Our Service Financial Story
-                    </Link>
-                  </h6>
-                  <div className="inner-content">
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-two-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-              <div
-                className="fancy-box style-two"
-                data-aos="fade-up"
-                data-aos-delay={400}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box-two3.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <a href="#" className="category">
-                    Research
-                  </a>
-                  <h6>
-                    <Link legacyBehavior href="service-details">
-                      Innovative Solutions in Action User Research
-                    </Link>
-                  </h6>
-                  <div className="inner-content">
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-two-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-              <div
-                className="fancy-box style-two"
-                data-aos="fade-up"
-                data-aos-delay={600}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                    src="assets/images/fancy-box/fancy-box-two4.jpg"
-                    alt="Fancy Box"
-                  />
-                </div>
-                <div className="content">
-                  <a href="#" className="category">
-                    Development
-                  </a>
-                  <h6>
-                    <Link legacyBehavior href="service-details">
-                      Proven Results Client’s with Our Solutions
-                    </Link>
-                  </h6>
-                  <div className="inner-content">
-                    <Link legacyBehavior href="/service-details">
-                      <a className="read-more">
-                        Read More <i className="far fa-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="bg">
-                    <img
-                      src="assets/images/shapes/fancy-box-two-bg.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Recent Projects Area End */}
-      {/* Counter TimeLine Area Start */}
-      <div className="counter-timeline-area">
-        <div className="container">
-          <div className="counter-timeline-wrap">
-            <div className="row no-gap justify-content-center">
-              <div className="col-lg-4 col-sm-6">
-                <div
-                  className="counter-timeline-item counter-text-wrap"
-                  data-aos="fade-up"
-                  data-aos-delay={200}
-                  data-aos-duration={1000}
-                  data-aos-offset={50}
-                >
-                  <div className="icon">
-                    <i className="flaticon-review" />
-                  </div>
-                  <span className="dots">
-                    <img
-                      src="assets/images/shapes/counter-dots.png"
-                      alt="Shape"
-                    />
-                  </span>
-                  <div className="content">
-                    <span
-                      className="count-text k-plus"
-                      data-speed={3000}
-                      data-stop={25}
-                    >
-                      <Counter end={25} />
-                    </span>
-                    <span className="counter-title">
-                      100% Satisficed Clients
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-sm-6">
-                <div
-                  className="counter-timeline-item counter-text-wrap"
-                  data-aos="fade-down"
-                  data-aos-duration={1000}
-                  data-aos-offset={50}
-                >
-                  <div className="content">
-                    <span
-                      className="count-text k-plus"
-                      data-speed={3000}
-                      data-stop={235}
-                    >
-                      <Counter end={235} />
-                    </span>
-                    <span className="counter-title">
-                      Task Complete For Global Clients
-                    </span>
-                  </div>
-                  <span className="dots">
-                    <img
-                      src="assets/images/shapes/counter-dots.png"
-                      alt="Shape"
-                    />
-                  </span>
-                  <div className="icon">
-                    <i className="flaticon-layers-1" />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-sm-6">
-                <div
-                  className="counter-timeline-item counter-text-wrap"
-                  data-aos="fade-up"
-                  data-aos-delay={400}
-                  data-aos-duration={1000}
-                  data-aos-offset={50}
-                >
-                  <div className="icon">
-                    <i className="flaticon-online-registration" />
-                  </div>
-                  <span className="dots">
-                    <img
-                      src="assets/images/shapes/counter-dots.png"
-                      alt="Shape"
-                    />
-                  </span>
-                  <div className="content">
-                    <span
-                      className="count-text plus"
-                      data-speed={3000}
-                      data-stop={1052}
-                    >
-                      <Counter end={1052} />
-                    </span>
-                    <span className="counter-title">
-                      Regular Free Registation
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Counter TimeLine Area End */}
-      {/* Management Area Start */}
-      <section
-        className="management-area bgp-bottom bgc-navyblue py-60"
-        style={{
-          backgroundImage: "url(assets/images/backgrounds/wave-shape.png)",
-        }}
-      >
-        <div className="container">
-          <div className="row gap-110 align-items-center">
-            <div className="col-lg-6">
-              <div
-                className="management-content text-white mt-40"
-                data-aos="fade-left"
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <div className="section-title mb-30">
-                  <h2>Take Effect Control of Business Management</h2>
-                </div>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus voluptatem
-                  accusantium doloremque laudantium totamto aperiame eaque
-                </p>
-                <div className="row gap-50 pt-25">
-                  <div className="col-md-6">
-                    <div className="iconic-box style-nine text-white">
-                      <div className="icon">
-                        <i className="fal fa-laptop-code" />
-                      </div>
-                      <div className="content">
-                        <h5>
-                          <Link legacyBehavior href="service-details">
-                            Mobile Friendly
-                          </Link>
-                        </h5>
-                        <p>
-                          Mistaken denouncing pleasure praising born will give
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="iconic-box style-nine text-white">
-                      <div className="icon">
-                        <i className="fal fa-cog" />
-                      </div>
-                      <div className="content">
-                        <h5>
-                          <Link legacyBehavior href="service-details">
-                            Powerful Prediction
-                          </Link>
-                        </h5>
-                        <p>
-                          At vero eos et accus amusesy praesen deleniti
-                          corruptie
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div
-                className="management-images my-40"
-                data-aos="fade-right"
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
                 <img
-                  src="assets/images/about/management1.png"
-                  alt="Management"
+                  src="assets/images/Websites-banners/gwdm.png"
+                  alt="Feature"
                 />
-                <div className="management-over">
+                <div className="content">
+                  <h4>
+                    <Link
+                      href="https://www.goodwillmovement.com.au/"
+                      className="projects-hover"
+                    >
+                      Goodwill Disability Movement
+                    </Link>
+                  </h4>
+
+                  <ul className="icon-list">
+                    <li>
+                      <i className="fal fa-check" /> React.js
+                    </li>
+                    <li>
+                      <i className="fal fa-check" /> Mongodb
+                    </li>
+                    <li>
+                      <i className="fal fa-check" />
+                      Responsive Documentation Included
+                    </li>
+                  </ul>
+                  <h5 style={{ marginTop: "47px" }}>
+                    <Link
+                      target="_blank"
+                      href="https://www.goodwillmovement.com.au/"
+                      className="theme-btn"
+                    >
+                      Visit Webiste
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div
+                className="feature-image-box style-two"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <img
+                  src="assets/images/Websites-banners/thoughtsNest.png"
+                  alt="Feature"
+                />
+                <div className="content">
+                  <h4>
+                    <Link
+                      href="https://github.com/Rahmankarim/ThoughtNest"
+                      className="projects-hover"
+                    >
+                      ThoughtNest
+                    </Link>
+                  </h4>
+
+                  <ul className="icon-list">
+                    <li>
+                      <i className="fal fa-check" /> Node js
+                    </li>
+                    <li>
+                      <i className="fal fa-check" /> Javascript
+                    </li>
+                    <li>
+                      <i className="fal fa-check" />
+                      Responsive Documentation Included
+                    </li>
+                  </ul>
+                  <h5 style={{ marginTop: "47px" }}>
+                    <Link
+                      target="_blank"
+                      href="https://github.com/Rahmankarim/ThoughtNest"
+                      className="theme-btn"
+                    >
+                      Show Source Code
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div
+                className="feature-image-box style-two"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <img
+                  src="assets/images/Websites-banners/smileCrafter.png"
+                  alt="Feature"
+                />
+                <div className="content">
+                  <h4>
+                    <Link
+                      href="https://github.com/Rahmankarim/SmileCrafters"
+                      className="projects-hover"
+                    >
+                      SmileCrafter
+                    </Link>
+                  </h4>
+
+                  <ul className="icon-list">
+                    <li>
+                      <i className="fal fa-check" /> Html, CSS ,Javascript,
+                      Typescript
+                    </li>
+                    <li>
+                      <i className="fal fa-check" /> Bootstrap
+                    </li>
+                    <li>
+                      <i className="fal fa-check" />
+                      Responsive Documentation Included
+                    </li>
+                  </ul>
+                  <h5 style={{ marginTop: "83px" }}>
+                    <Link
+                      target="_blank"
+                      href="https://github.com/Rahmankarim/SmileCrafters"
+                      className="theme-btn"
+                    >
+                      Show Source Code
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div
+                className="feature-image-box style-two"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <img
+                  src="assets/images/Websites-banners/Helpng-Hand.png"
+                  alt="Feature"
+                />
+                <div className="content">
+                  <h4>
+                    <Link
+                      href="https://github.com/Rahmankarim/HelpingHands"
+                      className="projects-hover"
+                    >
+                      Goodwill Disability Movement
+                    </Link>
+                  </h4>
+
+                  <ul className="icon-list">
+                    <li>
+                      <i className="fal fa-check" /> HTML5, CSS, Javascript ,
+                      Typescript
+                    </li>
+                    <li>
+                      <i className="fal fa-check" /> Bootstrap
+                    </li>
+                    <li>
+                      <i className="fal fa-check" />
+                      Responsive Documentation Included
+                    </li>
+                  </ul>
+                  <h5 style={{ marginTop: "47px" }}>
+                    <Link
+                      target="_blank"
+                      href="https://github.com/Rahmankarim/HelpingHands"
+                      className="theme-btn"
+                    >
+                      Show Source Code <i className="far fa-arrow-right" />
+                    </Link>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div
+                className="feature-image-box style-two"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <img
+                  src="assets/images/Websites-banners/TrendHive.png"
+                  alt="Feature"
+                />
+                <div className="content">
+                  <h4>
+                    <Link
+                      href="https://github.com/Rahmankarim/TrendHive"
+                      className="projects-hover"
+                    >
+                      TrendHive
+                    </Link>
+                  </h4>
+
+                  <ul className="icon-list">
+                    <li>
+                      <i className="fal fa-check" />{" "}
+                      HTML5,CSS,JavaScript,Typescript
+                    </li>
+                    <li>
+                      <i className="fal fa-check" /> Bootstrap
+                    </li>
+                    <li>
+                      <i className="fal fa-check" />
+                      Responsive Documentation Included
+                    </li>
+                  </ul>
+                  <h5 style={{ marginTop: "47px" }}>
+                    <Link
+                      target="_blank"
+                      href="https://github.com/Rahmankarim/TrendHive"
+                      className="theme-btn"
+                    >
+                      Show Source Code
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div
+                className="feature-image-box style-two"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <img
+                  src="assets/images/Websites-banners/Gemify.png"
+                  alt="Feature"
+                />
+                <div className="content">
+                  <h4>
+                    <Link
+                      href="https://github.com/Rahmankarim/Gemify"
+                      className="projects-hover"
+                    >
+                      Gemify
+                    </Link>
+                  </h4>
+
+                  <ul className="icon-list">
+                    <li>
+                      <i className="fal fa-check" /> Html, CSS ,Javascript,
+                      Typescript
+                    </li>
+                    <li>
+                      <i className="fal fa-check" /> Bootstrap
+                    </li>
+                    <li>
+                      <i className="fal fa-check" />
+                      Responsive Documentation Included
+                    </li>
+                  </ul>
+                  <h5 style={{ marginTop: "83px" }}>
+                    <Link
+                      target="_blank"
+                      href="https://github.com/Rahmankarim/Gemify"
+                      className="theme-btn"
+                    >
+                      Show Source Code
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <h3 className="githubLink">
+              Check More on{" "}
+              <Link
+                target="_blank"
+                style={{ color: "blue" }}
+                href="https://github.com/Rahmankarim"
+              >
+                Github
+              </Link>
+            </h3>
+          </div>
+        </div>
+      </section>
+      <section className="team-area pb-80 rpb-50">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xl-7 col-lg-9">
+              <div
+                className="section-title text-center mb-55"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <h2>Certificates</h2>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
                   <img
-                    src="assets/images/about/management2.png"
-                    alt="Management"
+                    src="assets/images/Certificates/communication.png"
+                    alt="Team"
+                  />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>Communication Foundation</h5>
+                  <span className="designation">Linkedin Learning</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img src="assets/images/Certificates/css.png" alt="Team" />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>CSS</h5>
+                  <span className="designation">Hacker Rank</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img
+                    src="assets/images/Certificates/foundation of cyber security.png"
+                    alt="Team"
+                  />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>Foundation of Cyber Security</h5>
+                  <span className="designation">Google</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img
+                    src="assets/images/Certificates/frontend-developer-react.png"
+                    alt="Team"
+                  />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>Frontend Developer(React)</h5>
+                  <span className="designation">HackerRank</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img
+                    src="assets/images/Certificates/introduction to devops.png"
+                    alt="Team"
+                  />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>Introduction to Devops</h5>
+                  <span className="designation">IBM</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img
+                    src="assets/images/Certificates/introduction to mobile dev.png"
+                    alt="Team"
+                  />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>Introduction to Mobile App Development</h5>
+                  <span className="designation">META</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img src="assets/images/Certificates/java.png" alt="Team" />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>Java</h5>
+                  <span className="designation">HackerRank</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img
+                    src="assets/images/Certificates/javascript-intermediate.png"
+                    alt="Team"
+                  />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>Javascript Intermediate</h5>
+                  <span className="designation">HackerRank</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img
+                    src="assets/images/Certificates/javascript.png"
+                    alt="Team"
+                  />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>Javascript</h5>
+                  <span className="designation">HackerRank</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div
+                className="team-member"
+                data-aos="fade-up"
+                data-aos-duration={1000}
+                data-aos-offset={50}
+              >
+                <div className="image">
+                  <img
+                    src="assets/images/Certificates/CB3 E-Learning.png"
+                    alt="Team"
+                  />
+                  <div className="social-media">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
+                </div>
+                <div className="description">
+                  <h5>CB3 E-Learning</h5>
+                  <span className="designation">Universal Robots</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="tooltip-area bgs-cover rel pt-130 rpt-100"
+        style={{
+          backgroundImage: "url(assets/images/backgrounds/tolltip.png)",
+        }}
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div
+              className="col-xl-9 col-lg-11 mb-135 rmb-80 text-center"
+              data-aos="fade-up"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <div className="section-title mb-35">
+                <h2>Lets get Connected</h2>
+                <p>
+                  Here are some of the social media platform to connect with
+                  each other
+                </p>
+              </div>
+              {/* <Link href="contact" className="theme-btn">
+                Get Started Now <i className="far fa-arrow-right" />
+              </Link> */}
+            </div>
+          </div>
+          <div className="tooltips-wrap">
+            <div className="tooltip-item active">
+              <div className="tooltip-btn">
+                <img
+                  style={{ maxWidth: "100%" }}
+                  src="assets/images/rahman karim/sticker (4).png"
+                  alt="Icon"
+                />
+              </div>
+              <div className="tooltip-content">
+                <div className="image">
+                  <img
+                    src="assets/images/rahman karim/surprised phone.png"
+                    alt="Tooltip"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="tooltip-item">
+              <div className="tooltip-btn">
+                <a
+                  href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/images/tooltips/tooltip-icon2.png"
+                    alt="Icon"
+                  />
+                </a>
+              </div>
+              <div className="tooltip-content">
+                <div className="image">
+                  <img
+                    src="assets/images/rahman karim/surprised phone.png"
+                    alt="Tooltip"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="tooltip-item">
+              <div className="tooltip-btn">
+                <a
+                  href="mailto:rahmankarim2468@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="assets/images/tooltips/Mail.webp" alt="Icon" />
+                </a>
+              </div>
+              <div className="tooltip-content">
+                <div className="image">
+                  <img
+                    src="assets/images/rahman karim/surprised phone.png"
+                    alt="Tooltip"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="tooltip-item">
+              <div className="tooltip-btn">
+                <a href="https://github.com/Rahmankarim" target="_blank">
+                  <img
+                    style={{ borderRadius: "100%" }}
+                    src="assets/images/tooltips/Github.png"
+                    alt="Icon"
+                  />
+                </a>
+              </div>
+              <div className="tooltip-content">
+                <div className="image">
+                  <img
+                    src="assets/images/rahman karim/surprised phone.png"
+                    alt="Tooltip"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="tooltip-item">
+              <div className="tooltip-btn">
+                <a href="https://medium.com/@rahmankarim2468" target="_blank">
+                  <img src="assets/images/tooltips/medium.png" alt="Icon" />
+                </a>
+              </div>
+              <div className="tooltip-content">
+                <div className="image">
+                  <img
+                    src="assets/images/rahman karim/surprised phone.png"
+                    alt="Tooltip"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="tooltip-item">
+              <div className="tooltip-btn">
+                <a
+                  href="https://www.instagram.com/rahman_karim_1/"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/images/tooltips/tooltip-icon6.png"
+                    alt="Icon"
+                  />
+                </a>
+              </div>
+              <div className="tooltip-content">
+                <div className="image">
+                  <img
+                    src="assets/images/rahman karim/surprised phone.png"
+                    alt="Tooltip"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="tooltip-item">
+              <div className="tooltip-btn">
+                <a href="https://dev.to/rahman_karim" target="_blank">
+                  <img src="assets/images/tooltips/dev.png" alt="Icon" />
+                </a>
+              </div>
+              <div className="tooltip-content">
+                <div className="image">
+                  <img
+                    src="assets/images/rahman karim/surprised phone.png"
+                    alt="Tooltip"
                   />
                 </div>
               </div>
@@ -986,282 +1757,163 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* Management Area End */}
-      {/* Testimonials Area Start */}
-      <section className="testimonials-area pt-130 rpt-100 pb-80 rpb-50">
+
+      <section
+        id="testimonials"
+        className="testimonials-nine-area py-130 rpy-100 rel z-1"
+      >
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-7 col-lg-9 col-md-11">
               <div
-                className="section-title text-center mb-60"
+                className="section-title text-center mb-55"
                 data-aos="fade-up"
+                data-aos-delay={50}
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                <h2>1253+ Global Clients Say About Our Business Services</h2>
+                <h2>Lets see what others think</h2>
               </div>
             </div>
           </div>
-        </div>
-        <TestimonialSlider />
-      </section>
-      {/* Testimonials Area End */}
-      {/* Blog Area Start */}
-      <section className="blog-area pb-100 rpb-70">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-7 col-lg-9 col-md-11">
-              <div
-                className="section-title text-center mb-60"
-                data-aos="fade-up"
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <h2>Get Every Single Updates and Learn Our News &amp; Blog</h2>
-              </div>
-            </div>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="blog-item style-two"
-                data-aos="fade-up"
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img src="assets/images/blog/blog4.png" alt="Blog" />
-                  <div className="date">
-                    <b>25</b>
-                    <span>Sep</span>
+          <Slider
+            {...sliderProps.testiSliderThree}
+            className="testi-slider-three"
+            data-aos="fade-in"
+            data-aos-delay={50}
+            data-aos-duration={1500}
+            data-aos-offset={50}
+          >
+            <div>
+              <div className="testimonial-item-two">
+                <div className="author">
+                  <div className="image">
+                    <img
+                      src="assets/images/testimonials/testi-author1.png"
+                      alt="Author"
+                    />
+                  </div>
+                  <div className="content">
+                    <h6>Dennis J. Lester</h6>
+                    <span>CEO &amp; Founder</span>
+                    <div className="ratting">
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                    </div>
                   </div>
                 </div>
-                <div className="content">
-                  <a href="#" className="category">
-                    Business
-                  </a>
-                  <h5>
-                    <Link legacyBehavior href="blog-details">
-                      Meet Success the Cale Smashing Book By Addy Osmania
-                    </Link>
-                  </h5>
-                  <ul className="blog-meta">
-                    <li>
-                      <i className="far fa-user-circle" />{" "}
-                      <a href="#">Roger J. Spaulding</a>
-                    </li>
-                    <li>
-                      <i className="far fa-comment-lines" />{" "}
-                      <a href="#">Comments(5)</a>
-                    </li>
-                  </ul>
+                <div className="line" />
+                <div className="author-text">
+                  Alignment refers to the practice of arranging visual elements
+                  on pages such as text, shapes, images, menu items, and CTA
+                  buttons foundation upon which designers gather
                 </div>
               </div>
             </div>
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="blog-item style-two"
-                data-aos="fade-up"
-                data-aos-delay={200}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img src="assets/images/blog/blog5.png" alt="Blog" />
-                  <div className="date">
-                    <b>28</b>
-                    <span>Sep</span>
+            <div>
+              <div className="testimonial-item-two">
+                <div className="author">
+                  <div className="image">
+                    <img
+                      src="assets/images/testimonials/testi-author2.png"
+                      alt="Author"
+                    />
+                  </div>
+                  <div className="content">
+                    <h6>Rene A. Watkins</h6>
+                    <span>Web Designer</span>
+                    <div className="ratting">
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                    </div>
                   </div>
                 </div>
-                <div className="content">
-                  <a href="#" className="category">
-                    Finance
-                  </a>
-                  <h5>
-                    <Link legacyBehavior href="blog-details">
-                      Practical Design Tips Guidelines For Beginner Designers
-                    </Link>
-                  </h5>
-                  <ul className="blog-meta">
-                    <li>
-                      <i className="far fa-user-circle" />{" "}
-                      <a href="#">Roger J. Spaulding</a>
-                    </li>
-                    <li>
-                      <i className="far fa-comment-lines" />{" "}
-                      <a href="#">Comments(5)</a>
-                    </li>
-                  </ul>
+                <div className="line" />
+                <div className="author-text">
+                  Alignment refers to the practice of arranging visual elements
+                  on pages such as text, shapes, images, menu items, and CTA
+                  buttons foundation upon which designers gather
                 </div>
               </div>
             </div>
-            <div className="col-xl-4 col-md-6 col-sm-10">
-              <div
-                className="blog-item style-two"
-                data-aos="fade-up"
-                data-aos-delay={400}
-                data-aos-duration={1000}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img src="assets/images/blog/blog6.png" alt="Blog" />
-                  <div className="date">
-                    <b>30</b>
-                    <span>Sep</span>
+            <div>
+              <div className="testimonial-item-two">
+                <div className="author">
+                  <div className="image">
+                    <img
+                      src="assets/images/testimonials/testi-author1.png"
+                      alt="Author"
+                    />
+                  </div>
+                  <div className="content">
+                    <h6>Dennis J. Lester</h6>
+                    <span>CEO &amp; Founder</span>
+                    <div className="ratting">
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                    </div>
                   </div>
                 </div>
-                <div className="content">
-                  <a href="#" className="category">
-                    Research
-                  </a>
-                  <h5>
-                    <Link legacyBehavior href="blog-details">
-                      Meet Success the Cale Smashing Book By Addy Osmania
-                    </Link>
-                  </h5>
-                  <ul className="blog-meta">
-                    <li>
-                      <i className="far fa-user-circle" />{" "}
-                      <a href="#">Roger J. Spaulding</a>
-                    </li>
-                    <li>
-                      <i className="far fa-comment-lines" />{" "}
-                      <a href="#">Comments(5)</a>
-                    </li>
-                  </ul>
+                <div className="line" />
+                <div className="author-text">
+                  Alignment refers to the practice of arranging visual elements
+                  on pages such as text, shapes, images, menu items, and CTA
+                  buttons foundation upon which designers gather
                 </div>
               </div>
             </div>
-          </div>
+            <div>
+              <div className="testimonial-item-two">
+                <div className="author">
+                  <div className="image">
+                    <img
+                      src="assets/images/testimonials/testi-author2.png"
+                      alt="Author"
+                    />
+                  </div>
+                  <div className="content">
+                    <h6>Rene A. Watkins</h6>
+                    <span>Web Designer</span>
+                    <div className="ratting">
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                    </div>
+                  </div>
+                </div>
+                <div className="line" />
+                <div className="author-text">
+                  Alignment refers to the practice of arranging visual elements
+                  on pages such as text, shapes, images, menu items, and CTA
+                  buttons foundation upon which designers gather
+                </div>
+              </div>
+            </div>
+          </Slider>
         </div>
-      </section>
-      {/* Blog Area End */}
-      {/* Client Logos Area Start */}
-      <section className="client-logo-area pb-90 rpb-65">
-        <div
-          className="section-title text-center mb-60"
-          data-aos="fade-up"
-          data-aos-duration={1500}
-          data-aos-offset={50}
-        >
-          <h4>I’ve 1253+ Global Clients &amp; lot’s of Project Complete</h4>
-        </div>
-        <div className="client-logo-wrap">
-          <div
-            className="client-logo-item"
-            data-aos="fade-up"
-            data-aos-duration={1000}
-            data-aos-offset={50}
-          >
-            <a href="#">
-              <img
-                src="assets/images/client-logos/client-logo-two1.png"
-                alt="Client Logo"
-              />
-            </a>
+        <div className="testimonial-nine-shapes">
+          <div className="shape one">
+            <img src="assets/images/shapes/testimonial-left.png" alt="Shape" />
           </div>
-          <div
-            className="client-logo-item"
-            data-aos="fade-up"
-            data-aos-delay={100}
-            data-aos-duration={1000}
-            data-aos-offset={50}
-          >
-            <a href="#">
-              <img
-                src="assets/images/client-logos/client-logo-two2.png"
-                alt="Client Logo"
-              />
-            </a>
-          </div>
-          <div
-            className="client-logo-item"
-            data-aos="fade-up"
-            data-aos-delay={200}
-            data-aos-duration={1000}
-            data-aos-offset={50}
-          >
-            <a href="#">
-              <img
-                src="assets/images/client-logos/client-logo-two3.png"
-                alt="Client Logo"
-              />
-            </a>
-          </div>
-          <div
-            className="client-logo-item"
-            data-aos="fade-up"
-            data-aos-delay={300}
-            data-aos-duration={1000}
-            data-aos-offset={50}
-          >
-            <a href="#">
-              <img
-                src="assets/images/client-logos/client-logo-two4.png"
-                alt="Client Logo"
-              />
-            </a>
-          </div>
-          <div
-            className="client-logo-item"
-            data-aos="fade-up"
-            data-aos-delay={400}
-            data-aos-duration={1000}
-            data-aos-offset={50}
-          >
-            <a href="#">
-              <img
-                src="assets/images/client-logos/client-logo-two5.png"
-                alt="Client Logo"
-              />
-            </a>
-          </div>
-          <div
-            className="client-logo-item"
-            data-aos="fade-up"
-            data-aos-delay={500}
-            data-aos-duration={1000}
-            data-aos-offset={50}
-          >
-            <a href="#">
-              <img
-                src="assets/images/client-logos/client-logo-two6.png"
-                alt="Client Logo"
-              />
-            </a>
-          </div>
-          <div
-            className="client-logo-item"
-            data-aos="fade-up"
-            data-aos-delay={600}
-            data-aos-duration={1000}
-            data-aos-offset={50}
-          >
-            <a href="#">
-              <img
-                src="assets/images/client-logos/client-logo-two7.png"
-                alt="Client Logo"
-              />
-            </a>
-          </div>
-          <div
-            className="client-logo-item"
-            data-aos="fade-up"
-            data-aos-delay={700}
-            data-aos-duration={1000}
-            data-aos-offset={50}
-          >
-            <a href="#">
-              <img
-                src="assets/images/client-logos/client-logo-two8.png"
-                alt="Client Logo"
-              />
-            </a>
+          <div className="shape two">
+            <img src="assets/images/shapes/testimonial-right.png" alt="Shape" />
           </div>
         </div>
       </section>
-      {/* Client Logos Area End */}
+
+      {/* CTA Area End */}
     </AkpagerLayout>
   );
 };
-export default Index;
+export default page;
