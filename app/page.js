@@ -1911,8 +1911,6 @@ const page = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Area End */}
     </AkpagerLayout>
   );
 };
