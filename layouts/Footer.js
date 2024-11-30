@@ -1723,135 +1723,236 @@ const Footer8 = () => {
 
 const Footer9 = () => {
   return (
-    <footer className="main-footer footer-five text-black pt-100 rel z-1">
+    // <footer className="main-footer footer-five text-black pt-100 rel z-1">
+    //   <div className="container">
+    //     <div className="for-middle-border pb-50">
+    //       <div className="row justify-content-between">
+    //         <div className="col-lg-5 col-md-7">
+    //           <div
+    //             className="footer-widget widget-about"
+    //             data-aos="fade-up"
+    //             data-aos-duration={1500}
+    //             data-aos-offset={50}
+    //           >
+    //             <div className="section-title">
+    //               <h2>Get Our Newsletters</h2>
+    //             </div>
+    //             <form action="#">
+    //               <div className="newsletter-form bgc-lighter">
+    //                 <input
+    //                   type="email"
+    //                   placeholder="Email Address"
+    //                   required=""
+    //                 />
+    //                 <button type="submit">
+    //                   <b>
+    //                     Sign Up <i className="far fa-arrow-right" />
+    //                   </b>
+    //                 </button>
+    //               </div>
+    //               <div className="radio-part">
+    //                 <input id="update-news" type="radio" />
+    //                 <label htmlFor="update-news">
+    //                   Get 7 days updates news &amp; offers
+    //                 </label>
+    //               </div>
+    //             </form>
+    //           </div>
+    //         </div>
+    //         <div className="col-lg-3 col-md-4 col-sm-6">
+    //           <div
+    //             className="footer-widget widget-contact-info"
+    //             data-aos="fade-up"
+    //             data-aos-delay={100}
+    //             data-aos-duration={1500}
+    //             data-aos-offset={50}
+    //           >
+    //             <h6 className="footer-title">Get In Touch</h6>
+    //             <ul>
+    //               <li>
+    //                 <a href="mailto:support@gmail.com">support@gmail.com</a>
+    //               </li>
+    //               <li>55 main Street, 2nd block Melbourne, Australia</li>
+    //               <li>
+    //                 <a href="calto:+00012345688">+000 (123) 456 88</a>
+    //               </li>
+    //             </ul>
+    //           </div>
+    //         </div>
+    //         <div className="col-lg-2 col-6 ms-lg-auto">
+    //           <div
+    //             className="footer-widget widget-links"
+    //             data-aos="fade-up"
+    //             data-aos-delay={100}
+    //             data-aos-duration={1500}
+    //             data-aos-offset={50}
+    //           >
+    //             <h6 className="footer-title">Resources</h6>
+    //             <ul>
+    //               <li>
+    //                 <Link href="shop">Product</Link>
+    //               </li>
+    //               <li>
+    //                 <Link href="services">Services</Link>
+    //               </li>
+    //               <li>
+    //                 <Link href="about">About Us</Link>
+    //               </li>
+    //               <li>
+    //                 <Link href="services">Benefits</Link>
+    //               </li>
+    //             </ul>
+    //           </div>
+    //         </div>
+    //         <div className="col-lg-2 col-6">
+    //           <div
+    //             className="footer-widget widget-links"
+    //             data-aos="fade-up"
+    //             data-aos-delay={150}
+    //             data-aos-duration={1500}
+    //             data-aos-offset={50}
+    //           >
+    //             <h6 className="footer-title">Quick Link</h6>
+    //             <ul>
+    //               <li>
+    //                 <Link href="services">Features</Link>
+    //               </li>
+    //               <li>
+    //                 <Link href="pricing">Pricing Plan</Link>
+    //               </li>
+    //               <li>
+    //                 <Link href="about">Best Program</Link>
+    //               </li>
+    //               <li>
+    //                 <Link href="contact">Press Kit</Link>
+    //               </li>
+    //             </ul>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //     <div className="footer-bottom py-15">
+    //       <div className="row align-items-center">
+    //         <div className="col-xl-8 col-lg-6">
+    //           <div
+    //             className="footer-bottom-logo mb-25 rmb-0 rmt-25 text-lg-start text-center"
+    //             data-aos="fade-left"
+    //             data-aos-duration={1500}
+    //             data-aos-offset={50}
+    //           >
+    //             <Link href="/">
+    //               <img src="assets/images/logos/logo6.png" alt="Logo" />
+    //             </Link>
+    //           </div>
+    //         </div>
+    //         <div className="col-xl-4 col-lg-6">
+    //           <div
+    //             className="copyright-text mb-25 pt-10 text-lg-end text-center"
+    //             data-aos="fade-right"
+    //             data-aos-duration={1500}
+    //             data-aos-offset={50}
+    //           >
+    //             <p>
+    //               Copyright @2024, <Link href="/">Akpager </Link> All Rights
+    //               Reserved
+    //             </p>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       {/* Scroll Top Button */}
+    //       <button className="scroll-top scroll-to-target" data-target="html">
+    //         <span className="far fa-angle-double-up" />
+    //       </button>
+    //     </div>
+    //   </div>
+    //   <p>
+    //     Copyright @2024, <Link href="/">Akpager </Link> All Rights Reserved
+    //   </p>
+    // </footer>
+    <footer className="main-footer footer-seven pt-100 rel z-1 bgc-black ">
       <div className="container">
-        <div className="for-middle-border pb-50">
-          <div className="row justify-content-between">
-            <div className="col-lg-5 col-md-7">
+        <div className="footer-cta-two bgc-lighter mb-80 rel z-1">
+          <div className="row align-items-center justify-content-between">
+            <div className="col-lg-7">
               <div
-                className="footer-widget widget-about"
-                data-aos="fade-up"
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <div className="section-title">
-                  <h2>Get Our Newsletters</h2>
-                </div>
-                <form action="#">
-                  <div className="newsletter-form bgc-lighter">
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      required=""
-                    />
-                    <button type="submit">
-                      <b>
-                        Sign Up <i className="far fa-arrow-right" />
-                      </b>
-                    </button>
-                  </div>
-                  <div className="radio-part">
-                    <input id="update-news" type="radio" />
-                    <label htmlFor="update-news">
-                      Get 7 days updates news &amp; offers
-                    </label>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div
-                className="footer-widget widget-contact-info"
-                data-aos="fade-up"
-                data-aos-delay={100}
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <h6 className="footer-title">Get In Touch</h6>
-                <ul>
-                  <li>
-                    <a href="mailto:support@gmail.com">support@gmail.com</a>
-                  </li>
-                  <li>55 main Street, 2nd block Melbourne, Australia</li>
-                  <li>
-                    <a href="calto:+00012345688">+000 (123) 456 88</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-2 col-6 ms-lg-auto">
-              <div
-                className="footer-widget widget-links"
-                data-aos="fade-up"
-                data-aos-delay={100}
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <h6 className="footer-title">Resources</h6>
-                <ul>
-                  <li>
-                    <Link href="shop">Product</Link>
-                  </li>
-                  <li>
-                    <Link href="services">Services</Link>
-                  </li>
-                  <li>
-                    <Link href="about">About Us</Link>
-                  </li>
-                  <li>
-                    <Link href="services">Benefits</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-2 col-6">
-              <div
-                className="footer-widget widget-links"
-                data-aos="fade-up"
-                data-aos-delay={150}
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <h6 className="footer-title">Quick Link</h6>
-                <ul>
-                  <li>
-                    <Link href="services">Features</Link>
-                  </li>
-                  <li>
-                    <Link href="pricing">Pricing Plan</Link>
-                  </li>
-                  <li>
-                    <Link href="about">Best Program</Link>
-                  </li>
-                  <li>
-                    <Link href="contact">Press Kit</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom py-15">
-          <div className="row align-items-center">
-            <div className="col-xl-8 col-lg-6">
-              <div
-                className="footer-bottom-logo mb-25 rmb-0 rmt-25 text-lg-start text-center"
+                className="section-title rmb-25"
                 data-aos="fade-left"
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                <Link href="/">
-                  <img src="assets/images/logos/logo6.png" alt="Logo" />
-                </Link>
+                <h2>Start a Project</h2>
+                <p>
+                  Interested in working together? We should connect.Tea is on
+                  Me.
+                </p>
               </div>
             </div>
-            <div className="col-xl-4 col-lg-6">
+            <div className="col-lg-4">
               <div
-                className="copyright-text mb-25 pt-10 text-lg-end text-center"
+                className="btn-part text-lg-center ps-xl-5"
                 data-aos="fade-right"
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
+                <Link href="contact" className="theme-btn mb-10">
+                  Lets Connect <i className="far fa-arrow-right" />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="footer-cta-shape">
+            <img src="assets/images/shapes/arrow.png" alt="Shape" />
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row ">
+          <div className="col-12 ">
+            <div
+              className="footer-widget widget-about"
+              style={{ textAlign: "center; " }}
+              data-aos="fade-up"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <div className="footer-logo mb-25">
+                <Link href="/">
+                  <img
+                    style={{ width: "91px" }}
+                    src="assets/images/rahman karim/sticker (2).png"
+                    alt="Logo"
+                  />
+                </Link>
+              </div>
+              <p>
+                At vero eos et accusamus iusto odio dignissimos ducimus
+                blanditiise
+              </p>
+              <div className="">
+                <div className="footer-bottom-menu ">
+                  <ul>
+                    <li>
+                      <Link href="faqs">Faqs</Link>
+                    </li>
+                    <li>
+                      <Link href="about">Setting</Link>
+                    </li>
+                    <li>
+                      <Link href="about">Privacy</Link>
+                    </li>
+                    <li>
+                      <Link href="contact">Contact</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="footer-bottom mt-30 py-15">
+          <div className="row align-items-center">
+            <div className="col-xl-4 col-lg-6">
+              <div className="copyright-text pt-10 text-lg-start text-center">
                 <p>
                   Copyright @2024, <Link href="/">Akpager </Link> All Rights
                   Reserved
@@ -1864,6 +1965,12 @@ const Footer9 = () => {
             <span className="far fa-angle-double-up" />
           </button>
         </div>
+      </div>
+      <div className="bg-lines line-white">
+        <span />
+        <span />
+        <span />
+        <span />
       </div>
     </footer>
   );

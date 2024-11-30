@@ -4,9 +4,6 @@ import { sliderProps } from "@/utility/sliderProps";
 import Link from "next/link";
 import { Nav, Tab } from "react-bootstrap";
 import Slider from "react-slick";
-import SkillSlider from "@/components/skillSlider";
-import CoursesIsotope from "@/components/isotope/CoursesIsotope";
-// Import if using a module system
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -171,6 +168,38 @@ const page = () => {
           </div>
         </div>
       </section>
+
+      <section
+        id="about"
+        className="client-logo-area pt-100 pb-90 rpb-60 rel z-2 "
+        style={{ marginTop: "-187px" }}
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xl-8 col-lg-9 col-md-11">
+              <div
+                className="section-title text-center mb-60"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <h1>About</h1>
+              </div>
+            </div>
+          </div>
+          <p>
+            I’m <span style={{ color: "#9000FF" }}>Rahman Karim</span>, a MERN
+            Stack Developer and a Computer Science student at COMSATS Lahore.
+            During my internship at Crogics Technologies, I gained valuable
+            experience building both the front-end and back-end of web
+            applications, ensuring seamless functionality. Alongside my passion
+            for technology, I enjoy hiking and playing football, which help me
+            stay active and balanced. I’m always eager to learn, grow, and use
+            my skills to create innovative solutions that make a difference.
+          </p>
+        </div>
+      </section>
+
       {/* Hero area End */}
       {/* Client Logo Area Start */}
       <section className="client-logo-area pt-100 pb-90 rpb-60 rel z-2">
@@ -183,94 +212,10 @@ const page = () => {
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                {/* <span className="subtitle-three mb-10">
-                  Meet Our Global Clients
-                </span> */}
                 <h1>Education</h1>
               </div>
             </div>
           </div>
-          {/* <div className="row align-items-center justify-content-center row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2">
-            <div className="col">
-              <div
-                className="client-logo-item style-four py-45 rpy-25"
-                data-aos="fade-up"
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <a href="#">
-                  <img
-                    src="assets/images/client-logos/client-logo1.png"
-                    alt="Client Logo"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className="client-logo-item style-four py-65 rpy-25"
-                data-aos="fade-up"
-                data-aos-delay={50}
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <a href="#">
-                  <img
-                    src="assets/images/client-logos/client-logo2.png"
-                    alt="Client Logo"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className="client-logo-item style-four py-45 rpy-25"
-                data-aos="fade-up"
-                data-aos-delay={100}
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <a href="#">
-                  <img
-                    src="assets/images/client-logos/client-logo3.png"
-                    alt="Client Logo"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className="client-logo-item style-four py-65 rpy-25"
-                data-aos="fade-up"
-                data-aos-delay={150}
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <a href="#">
-                  <img
-                    src="assets/images/client-logos/client-logo4.png"
-                    alt="Client Logo"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className="client-logo-item style-four py-45 rpy-25"
-                data-aos="fade-up"
-                data-aos-delay={200}
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <a href="#">
-                  <img
-                    src="assets/images/client-logos/client-logo5.png"
-                    alt="Client Logo"
-                  />
-                </a>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
       {/* Client Logo Area End */}

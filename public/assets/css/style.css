@@ -13928,7 +13928,7 @@ a.theme-btn.style-four:hover {
   margin-bottom: 241px;
 }
 .hero-nine-shapes {
-  height: calc(100% + -43px);
+  height: calc(100% + -20px);
 }
 .client-logo-area {
   padding-top: 0;
@@ -13968,4 +13968,9 @@ a.theme-btn.style-four:hover {
   left: 50%;
   bottom: 0px;
   transform: translate(-50%);
+}
+
+.newAlignHeader {
+  display: flex !important;
+  justify-content: space-between;
 }

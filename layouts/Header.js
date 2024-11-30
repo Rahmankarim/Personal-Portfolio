@@ -682,31 +682,31 @@ const Header8 = ({ onePage }) => {
 };
 const Header9 = ({ onePage }) => {
   const menus = [
-    { id: 1, href: "home", title: "Home" },
-    { id: 3, href: "services", title: "services" },
-    { id: 8, href: "about", title: "about" },
-    { id: 2, href: "featuers", title: "featuers" },
-    { id: 6, href: "pricing", title: "pricing" },
-    { id: 5, href: "testimonials", title: "testimonials" },
+    { id: 1, href: "", title: "Say Hello 👋" },
+    { id: 2, href: "", title: "My Resume" },
   ];
   return (
     <header className="main-header menu-absolute no-border">
       {/* Start Header-Upper*/}
       <div className="header-upper">
         <div className="container container-1660 clearfix">
-          <div className="header-inner py-20 rel d-flex align-items-center">
+          <div
+            className="header-inner py-20 rel d-flex align-items-center newAlignHeader
+"
+          >
             <div className="logo-outer">
               <div className="logo">
                 <Link href="/">
                   <img
-                    src="assets/images/logos/logo6.png"
+                    style={{ width: "91px" }}
+                    src="assets/images/rahman karim/sticker (2).png"
                     alt="Logo"
                     title="Logo"
                   />
                 </Link>
               </div>
             </div>
-            <div className="nav-outer ms-lg-5 ps-lg-5 clearfix">
+            <div className="nav-outer clearfix">
               {/* Main Menu */}
               <nav className="main-menu navbar-expand-lg">
                 <Nav
@@ -719,18 +719,6 @@ const Header9 = ({ onePage }) => {
               {/* Main Menu End*/}
             </div>
             {/* Nav Search */}
-            <div className="nav-search ms-xl-2 ms-4 me-lg-auto py-10">
-              <NavSearch />
-            </div>
-            {/* Menu Button */}
-            <div className="menu-btns ms-lg-auto">
-              <Link href="cantact" className="light-btn">
-                Sign Up
-              </Link>
-              <Link href="contact" className="theme-btn style-two">
-                Get Started <i className="far fa-arrow-right" />
-              </Link>
-            </div>
           </div>
         </div>
       </div>
