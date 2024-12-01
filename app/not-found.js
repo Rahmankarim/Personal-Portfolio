@@ -1,7 +1,7 @@
 import AkpagerLayout from "@/layouts/AkpagerLayout";
 const e404 = () => {
   return (
-    <AkpagerLayout header={10}>
+    <AkpagerLayout header={9}>
       {" "}
       <section className="error-area py-150 rpy-100">
         <div className="container">
@@ -37,27 +37,6 @@ const e404 = () => {
                   never existed in the first place. But don't worry, you're not
                   lost for long.
                 </p>
-                <form
-                  className="newsletter-form style-three"
-                  action="#"
-                  data-aos="fade-up"
-                  data-aos-delay={100}
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
-                >
-                  <label htmlFor="search">
-                    <i className="far fa-search fa-fw" />
-                  </label>
-                  <input
-                    id="search"
-                    type="search"
-                    placeholder="Search"
-                    required=""
-                  />
-                  <button type="submit">
-                    Search <i className="far fa-arrow-right" />
-                  </button>
-                </form>
               </div>
             </div>
           </div>

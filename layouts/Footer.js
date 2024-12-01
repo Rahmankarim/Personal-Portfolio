@@ -1906,56 +1906,16 @@ const Footer9 = () => {
         </div>
       </div>
       <div className="container">
-        <div className="row ">
-          <div className="col-12 ">
-            <div
-              className="footer-widget widget-about"
-              style={{ textAlign: "center; " }}
-              data-aos="fade-up"
-              data-aos-duration={1500}
-              data-aos-offset={50}
-            >
-              <div className="footer-logo mb-25">
-                <Link href="/">
-                  <img
-                    style={{ width: "91px" }}
-                    src="assets/images/rahman karim/sticker (2).png"
-                    alt="Logo"
-                  />
-                </Link>
-              </div>
-              <p>
-                At vero eos et accusamus iusto odio dignissimos ducimus
-                blanditiise
-              </p>
-              <div className="">
-                <div className="footer-bottom-menu ">
-                  <ul>
-                    <li>
-                      <Link href="faqs">Faqs</Link>
-                    </li>
-                    <li>
-                      <Link href="about">Setting</Link>
-                    </li>
-                    <li>
-                      <Link href="about">Privacy</Link>
-                    </li>
-                    <li>
-                      <Link href="contact">Contact</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="footer-bottom mt-30 py-15">
           <div className="row align-items-center">
             <div className="col-xl-4 col-lg-6">
               <div className="copyright-text pt-10 text-lg-start text-center">
                 <p>
-                  Copyright @2024, <Link href="/">Akpager </Link> All Rights
-                  Reserved
+                  Copyright @2024,{" "}
+                  <Link href="https://www.linkedin.com/in/rahman-karim-73a59022a/">
+                    Rahman Karim{" "}
+                  </Link>{" "}
+                  All Rights Reserved
                 </p>
               </div>
             </div>

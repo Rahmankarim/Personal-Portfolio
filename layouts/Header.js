@@ -681,10 +681,6 @@ const Header8 = ({ onePage }) => {
   );
 };
 const Header9 = ({ onePage }) => {
-  const menus = [
-    { id: 1, href: "", title: "Say Hello 👋" },
-    { id: 2, href: "", title: "My Resume" },
-  ];
   return (
     <header className="main-header menu-absolute no-border">
       {/* Start Header-Upper*/}
@@ -706,16 +702,27 @@ const Header9 = ({ onePage }) => {
                 </Link>
               </div>
             </div>
-            <div className="nav-outer clearfix">
+            <div className="nav-outer clearfix ">
+              <Link
+                style={{ fontSize: "20px" }}
+                className="me-3"
+                href="contact"
+              >
+                Say Hello 👋{" "}
+              </Link>
+              <Link style={{ fontSize: "20px" }} href="contact">
+                My Resume
+              </Link>
+
               {/* Main Menu */}
-              <nav className="main-menu navbar-expand-lg">
+              {/* <nav className="main-menu navbar-expand-lg">
                 <Nav
                   onePage={onePage}
                   logo="assets/images/logos/logo6.png"
                   dark={true}
                   menus={menus}
                 />
-              </nav>
+              </nav> */}
               {/* Main Menu End*/}
             </div>
             {/* Nav Search */}

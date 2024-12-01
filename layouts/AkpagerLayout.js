@@ -22,7 +22,7 @@ const AkpagerLayout = ({ children, header, footer, bodyClass, onePage }) => {
       <div className="page-wrapper">
         <Header header={header} onePage={onePage} />
         {children}
-        <Footer footer={footer} />
+        <Footer footer={9} />
       </div>
     </Fragment>
   );
