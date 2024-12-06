@@ -706,7 +706,9 @@ const Header9 = ({ onePage }) => {
               <Link
                 style={{ fontSize: "20px" }}
                 className="me-3"
-                href="contact"
+                href="mailto:rahmankarim2468@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Say Hello 👋{" "}
               </Link>

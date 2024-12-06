@@ -1,4 +1,5 @@
 "use client";
+import React, { useEffect } from "react";
 import AkpagerLayout from "@/layouts/AkpagerLayout";
 import { sliderProps } from "@/utility/sliderProps";
 import Link from "next/link";
@@ -7,18 +8,25 @@ import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-AOS.init({
-  duration: 1200,
-  easing: "ease-in-out",
-  once: true,
-  mirror: false,
-});
-
-window.addEventListener("load", () => {
-  AOS.refresh();
-});
-
 const page = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+
+    const handleLoad = () => {
+      AOS.refresh();
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
   return (
     <AkpagerLayout header={9} footer={9} bodyClass={"home-nine"} onePage={true}>
       <section
@@ -1734,12 +1742,12 @@ const page = () => {
                 <div className="author">
                   <div className="image">
                     <img
-                      src="assets/images/testimonials/testi-author1.png"
+                      src="assets/images/testimonials/ceo.jpg"
                       alt="Author"
                     />
                   </div>
                   <div className="content">
-                    <h6>Dennis J. Lester</h6>
+                    <h6>Majeed</h6>
                     <span>CEO &amp; Founder</span>
                     <div className="ratting">
                       <i className="fas fa-star" />
@@ -1752,9 +1760,12 @@ const page = () => {
                 </div>
                 <div className="line" />
                 <div className="author-text">
-                  Alignment refers to the practice of arranging visual elements
-                  on pages such as text, shapes, images, menu items, and CTA
-                  buttons foundation upon which designers gather
+                  Rahman Karim is an exceptional MERN stack developer with a
+                  strong foundation in web development and database management.
+                  His ability to integrate front-end and back-end seamlessly
+                  ensures user-friendly and efficient applications. He
+                  consistently demonstrates a passion for learning and
+                  innovation, making him a valuable asset to any team.
                 </div>
               </div>
             </div>
@@ -1763,13 +1774,13 @@ const page = () => {
                 <div className="author">
                   <div className="image">
                     <img
-                      src="assets/images/testimonials/testi-author2.png"
+                      src="assets/images/testimonials/ustad.png"
                       alt="Author"
                     />
                   </div>
                   <div className="content">
-                    <h6>Rene A. Watkins</h6>
-                    <span>Web Designer</span>
+                    <h6>Abdullah Baig</h6>
+                    <span>Full stack web developer</span>
                     <div className="ratting">
                       <i className="fas fa-star" />
                       <i className="fas fa-star" />
@@ -1781,24 +1792,27 @@ const page = () => {
                 </div>
                 <div className="line" />
                 <div className="author-text">
-                  Alignment refers to the practice of arranging visual elements
-                  on pages such as text, shapes, images, menu items, and CTA
-                  buttons foundation upon which designers gather
+                  Rahman is a talented and dedicated student of computer science
+                  with a keen interest in data science and software development.
+                  His hands-on experience with projects, including dynamic web
+                  applications and mobile apps, showcases his technical
+                  expertise and creative problem-solving skills.
                 </div>
               </div>
             </div>
+            <div></div>
             <div>
               <div className="testimonial-item-two">
                 <div className="author">
                   <div className="image">
                     <img
-                      src="assets/images/testimonials/testi-author1.png"
+                      src="assets/images/testimonials/shahab.jpg"
                       alt="Author"
                     />
                   </div>
                   <div className="content">
-                    <h6>Dennis J. Lester</h6>
-                    <span>CEO &amp; Founder</span>
+                    <h6>Shahab Karim</h6>
+                    <span>Mern Stack Developer</span>
                     <div className="ratting">
                       <i className="fas fa-star" />
                       <i className="fas fa-star" />
@@ -1810,38 +1824,11 @@ const page = () => {
                 </div>
                 <div className="line" />
                 <div className="author-text">
-                  Alignment refers to the practice of arranging visual elements
-                  on pages such as text, shapes, images, menu items, and CTA
-                  buttons foundation upon which designers gather
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="testimonial-item-two">
-                <div className="author">
-                  <div className="image">
-                    <img
-                      src="assets/images/testimonials/testi-author2.png"
-                      alt="Author"
-                    />
-                  </div>
-                  <div className="content">
-                    <h6>Rene A. Watkins</h6>
-                    <span>Web Designer</span>
-                    <div className="ratting">
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                    </div>
-                  </div>
-                </div>
-                <div className="line" />
-                <div className="author-text">
-                  Alignment refers to the practice of arranging visual elements
-                  on pages such as text, shapes, images, menu items, and CTA
-                  buttons foundation upon which designers gather
+                  Rahman Karim is a versatile and driven individual who excels
+                  in both academics and professional endeavors. His internship
+                  experience and coursework reflect his commitment to mastering
+                  his field, while his collaborative attitude makes him a
+                  pleasure to work with.
                 </div>
               </div>
             </div>
