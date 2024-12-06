@@ -1894,7 +1894,13 @@ const Footer9 = () => {
                 data-aos-duration={1500}
                 data-aos-offset={50}
               >
-                <Link href="contact" className="theme-btn mb-10">
+                <Link
+                  href="mailto:rahmankarim2468@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="theme-btn mb-10"
+                >
+                  {" "}
                   Lets Connect <i className="far fa-arrow-right" />
                 </Link>
               </div>
