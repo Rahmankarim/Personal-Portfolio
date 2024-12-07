@@ -751,38 +751,7 @@ const page = () => {
               <span className="subtitle"></span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex">
-            <div
-              className="icon"
-              style={{ background: "transparent", borderRadius: "31px" }}
-            >
-              <img
-                className="imageLaungauge"
-                src="assets/images/launguages/Javascript.png"
-                alt="Hero"
-              />
-            </div>
-            <div className="content">
-              <h6 className="title">JavaScript</h6>
-              {/* <span className="subtitle">9+ Course</span> */}
-            </div>
-          </div>
-          <div className="marquee-iconic-box d-flex">
-            <div
-              className="icon"
-              style={{ background: "transparent", borderRadius: "31px" }}
-            >
-              <img
-                className="imageLaungauge"
-                src="assets/images/launguages/html.png"
-                alt="Hero"
-              />
-            </div>
-            <div className="content">
-              <h6 className="title">HTML5 </h6>
-              {/* <span className="subtitle">9+ Course</span> */}
-            </div>
-          </div>
+
           <div className="marquee-iconic-box d-flex">
             <div
               className="icon"
