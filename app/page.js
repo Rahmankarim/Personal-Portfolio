@@ -1197,7 +1197,6 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div></div>
             <div>
               <div className="testimonial-item-two">
                 <div className="author">

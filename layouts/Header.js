@@ -712,20 +712,13 @@ const Header9 = ({ onePage }) => {
               >
                 Say Hello 👋{" "}
               </Link>
-              <Link style={{ fontSize: "20px" }} href="contact">
+              <a
+                href="/assets/Files/RahmanKarimResume.pdf"
+                download="RahmanKarimResume.pdf"
+                style={{ fontSize: "20px", textDecoration: "none" }}
+              >
                 My Resume
-              </Link>
-
-              {/* Main Menu */}
-              {/* <nav className="main-menu navbar-expand-lg">
-                <Nav
-                  onePage={onePage}
-                  logo="assets/images/logos/logo6.png"
-                  dark={true}
-                  menus={menus}
-                />
-              </nav> */}
-              {/* Main Menu End*/}
+              </a>
             </div>
             {/* Nav Search */}
           </div>
