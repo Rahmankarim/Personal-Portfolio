@@ -43,10 +43,7 @@ const ProjectsIsotope = () => {
               data-aos-duration={1500}
               data-aos-offset={50}
             >
-              <h2>
-                Revolutionizing Your Digital Landscape Our Dynamic Marketing
-                Project
-              </h2>
+              <h2 style={{ color: "white" }}>Certificates</h2>
             </div>
           </div>
         </div>
@@ -66,35 +63,35 @@ const ProjectsIsotope = () => {
           </li>
           <li
             data-filter=".design"
-            className={`c-pointer ${activeBtn("design")}`}
-            onClick={handleFilterKeyChange("design")}
+            className={`c-pointer ${activeBtn("webdev")}`}
+            onClick={handleFilterKeyChange("webdev")}
           >
-            Design
+            Web-Development
           </li>
           <li
             data-filter=".marketing"
-            className={`c-pointer ${activeBtn("marketing")}`}
-            onClick={handleFilterKeyChange("marketing")}
+            className={`c-pointer ${activeBtn("mobdev")}`}
+            onClick={handleFilterKeyChange("mobdev")}
           >
-            Marketing
+            Mobile-Development
           </li>
           <li
             data-filter=".branding"
-            className={`c-pointer ${activeBtn("branding")}`}
-            onClick={handleFilterKeyChange("branding")}
+            className={`c-pointer ${activeBtn("ai")}`}
+            onClick={handleFilterKeyChange("ai")}
           >
-            Branding
+            Artificial intelligence
           </li>
           <li
             data-filter=".seo"
-            className={`c-pointer ${activeBtn("seo")}`}
-            onClick={handleFilterKeyChange("seo")}
+            className={`c-pointer ${activeBtn("other")}`}
+            onClick={handleFilterKeyChange("other")}
           >
-            SEO
+            Other
           </li>
         </ul>
         <div className="row project-active">
-          <div className="col-xl-4 col-md-6 item marketing">
+          <div className="col-xl-4 col-md-6 item webdev">
             <div
               className="project-item"
               data-aos="fade-up"
@@ -103,41 +100,133 @@ const ProjectsIsotope = () => {
             >
               <div className="image">
                 <img
-                  src="assets/images/projects/project-grid1.jpg"
+                  src="assets/images/Certificates/css.png"
                   alt="Project Grid"
                 />
               </div>
               <div className="content">
                 <h5>
-                  <Link href="project-details">Digital Product Design</Link>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    style={{ color: "white" }}
+                  >
+                    CSS{" "}
+                  </Link>
                 </h5>
-                <span className="category">Design, Branding</span>
+                <span className="category">HackerRank</span>
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-md-6 item design seo">
+          <div className="col-xl-4 col-md-6 item webdev">
             <div
               className="project-item"
               data-aos="fade-up"
-              data-aos-delay={100}
               data-aos-duration={1500}
               data-aos-offset={50}
             >
               <div className="image">
                 <img
-                  src="assets/images/projects/project-grid2.jpg"
+                  src="assets/images/Certificates/foundation of cyber security.png"
                   alt="Project Grid"
                 />
               </div>
               <div className="content">
                 <h5>
-                  <Link href="project-details">Website Development</Link>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    style={{ color: "white" }}
+                  >
+                    Foundation of Cyber Security{" "}
+                  </Link>
                 </h5>
-                <span className="category">Design, Branding</span>
+                <span className="category">Google</span>
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-md-6 item branding">
+          <div className="col-xl-4 col-md-6 item webdev">
+            <div
+              className="project-item"
+              data-aos="fade-up"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <div className="image">
+                <img
+                  src="assets/images/Certificates/frontend-developer-react.png"
+                  alt="Project Grid"
+                />
+              </div>
+              <div className="content">
+                <h5>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    style={{ color: "white" }}
+                  >
+                    Frontend Developer(React){" "}
+                  </Link>
+                </h5>
+                <span className="category">HackerRank</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-4 col-md-6 item webdev">
+            <div
+              className="project-item"
+              data-aos="fade-up"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <div className="image">
+                <img
+                  src="assets/images/Certificates/java.png"
+                  alt="Project Grid"
+                />
+              </div>
+              <div className="content">
+                <h5>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    style={{ color: "white" }}
+                  >
+                    Java{" "}
+                  </Link>
+                </h5>
+                <span className="category">HackerRank</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-4 col-md-6 item other">
+            <div
+              className="project-item"
+              data-aos="fade-up"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <div className="image">
+                <img
+                  src="assets/images/Certificates/introduction to devops.png"
+                  alt="Project Grid"
+                />
+              </div>
+              <div className="content">
+                <h5>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    style={{ color: "white" }}
+                  >
+                    Introduction to Devops{" "}
+                  </Link>
+                </h5>
+                <span className="category">IBM</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-4 col-md-6 item  webdev ">
             <div
               className="project-item"
               data-aos="fade-up"
@@ -147,62 +236,21 @@ const ProjectsIsotope = () => {
             >
               <div className="image">
                 <img
-                  src="assets/images/projects/project-grid3.jpg"
+                  src="assets/images/Certificates/javascript-intermediate.png"
                   alt="Project Grid"
                 />
               </div>
               <div className="content">
                 <h5>
-                  <Link href="project-details">Digital Product Design</Link>
+                  <Link style={{ color: "white" }} href="project-details">
+                    Javascript intermediate
+                  </Link>
                 </h5>
-                <span className="category">Design, Branding</span>
+                <span className="category">HackerRank</span>
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-md-6 item design seo">
-            <div
-              className="project-item"
-              data-aos="fade-up"
-              data-aos-duration={1500}
-              data-aos-offset={50}
-            >
-              <div className="image">
-                <img
-                  src="assets/images/projects/project-grid4.jpg"
-                  alt="Project Grid"
-                />
-              </div>
-              <div className="content">
-                <h5>
-                  <Link href="project-details">Website Development</Link>
-                </h5>
-                <span className="category">Design, Branding</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-md-6 item marketing branding">
-            <div
-              className="project-item"
-              data-aos="fade-up"
-              data-aos-delay={100}
-              data-aos-duration={1500}
-              data-aos-offset={50}
-            >
-              <div className="image">
-                <img
-                  src="assets/images/projects/project-grid5.jpg"
-                  alt="Project Grid"
-                />
-              </div>
-              <div className="content">
-                <h5>
-                  <Link href="project-details">Digital Product Design</Link>
-                </h5>
-                <span className="category">Design, Branding</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-md-6 item branding seo design">
+          <div className="col-xl-4 col-md-6 item  other ">
             <div
               className="project-item"
               data-aos="fade-up"
@@ -212,62 +260,21 @@ const ProjectsIsotope = () => {
             >
               <div className="image">
                 <img
-                  src="assets/images/projects/project-grid6.jpg"
+                  src="assets/images/Certificates/communication.png"
                   alt="Project Grid"
                 />
               </div>
               <div className="content">
                 <h5>
-                  <Link href="project-details">Website Development</Link>
+                  <Link href="project-details" style={{ color: "white" }}>
+                    Communication Foundation
+                  </Link>
                 </h5>
-                <span className="category">Design, Branding</span>
+                <span className="category">Linkedin Learning</span>
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-md-6 item design">
-            <div
-              className="project-item"
-              data-aos="fade-up"
-              data-aos-duration={1500}
-              data-aos-offset={50}
-            >
-              <div className="image">
-                <img
-                  src="assets/images/projects/project-grid7.jpg"
-                  alt="Project Grid"
-                />
-              </div>
-              <div className="content">
-                <h5>
-                  <Link href="project-details">Digital Product Design</Link>
-                </h5>
-                <span className="category">Design, Branding</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-md-6 item marketing seo">
-            <div
-              className="project-item"
-              data-aos="fade-up"
-              data-aos-delay={100}
-              data-aos-duration={1500}
-              data-aos-offset={50}
-            >
-              <div className="image">
-                <img
-                  src="assets/images/projects/project-grid8.jpg"
-                  alt="Project Grid"
-                />
-              </div>
-              <div className="content">
-                <h5>
-                  <Link href="project-details">Website Development</Link>
-                </h5>
-                <span className="category">Design, Branding</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-md-6 item seo design">
+          <div className="col-xl-4 col-md-6 item  mobdev ">
             <div
               className="project-item"
               data-aos="fade-up"
@@ -277,19 +284,62 @@ const ProjectsIsotope = () => {
             >
               <div className="image">
                 <img
-                  src="assets/images/projects/project-grid9.jpg"
+                  src="assets/images/Certificates/introduction to mobile dev.png"
                   alt="Project Grid"
                 />
               </div>
               <div className="content">
                 <h5>
-                  <Link href="project-details">Digital Product Design</Link>
+                  <Link href="project-details " style={{ color: "white" }}>
+                    Introduction to Mobile App Development
+                  </Link>
                 </h5>
-                <span className="category">Design, Branding</span>
+                <span className="category">META</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-4 col-md-6 item webdev">
+            <div
+              className="project-item"
+              data-aos="fade-up"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <div className="image">
+                <img
+                  src="assets/images/Certificates/javascript.png"
+                  alt="Project Grid"
+                />
+              </div>
+              <div className="content">
+                <h5>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+                    style={{ color: "white" }}
+                  >
+                    Javascript{" "}
+                  </Link>
+                </h5>
+                <span className="category">HackerRank</span>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="more-btn text-center"
+        data-aos="fade-up"
+        data-aos-duration={1500}
+        data-aos-offset={50}
+      >
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/rahman-karim-73a59022a/"
+          className="theme-btn"
+        >
+          View More <i className="far fa-arrow-right" />
+        </a>
       </div>
     </section>
   );
