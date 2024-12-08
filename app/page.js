@@ -1040,7 +1040,7 @@ const page = () => {
                 <a href="https://github.com/Rahmankarim" target="_blank">
                   <img
                     style={{ borderRadius: "100%" }}
-                    src="assets/images/tooltips/Github.png"
+                    src="assets/images/icons/git.webp"
                     alt="Icon"
                   />
                 </a>
