@@ -1157,12 +1157,12 @@ const page = () => {
                 </div>
                 <div className="line" />
                 <div className="author-text">
-                  Rahman Karim is an exceptional MERN stack developer with a
+                  MR Rahman Karim is an exceptional MERN stack developer with a
                   strong foundation in web development and database management.
                   His ability to integrate front-end and back-end seamlessly
                   ensures user-friendly and efficient applications. He
-                  consistently demonstrates a passion for learning and
-                  innovation, making him a valuable asset to any team.
+                  consistently demonstrates a passion for learning and exploring
+                  his field.
                 </div>
               </div>
             </div>
@@ -1191,8 +1191,7 @@ const page = () => {
                 <div className="author-text">
                   Rahman is a talented and dedicated student of computer science
                   with a keen interest in data science and software development.
-                  His hands-on experience with projects, including dynamic web
-                  applications and mobile apps, showcases his technical
+                  His hands-on experience with projects, showcases his technical
                   expertise and creative problem-solving skills.
                 </div>
               </div>
