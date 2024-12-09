@@ -220,7 +220,7 @@ const ProjectList = () => {
             <h2>
               <Link
                 target="_blank"
-                href="https://github.com/Rahmankarim/TrendHive"
+                href="https://rahmankarim.github.io/TrendHive/"
               >
                 TrendHive
               </Link>
@@ -232,7 +232,7 @@ const ProjectList = () => {
             </p>
             <Link
               target="_blank"
-              href="https://github.com/Rahmankarim/TrendHive"
+              href="https://rahmankarim.github.io/TrendHive/"
               className="details-btn"
             >
               <i className="far fa-arrow-right" />
