@@ -713,8 +713,8 @@ const Header9 = ({ onePage }) => {
                 Say Hello 👋{" "}
               </Link>
               <a
-                href="/assets/Files/RahmanKarimResume.pdf"
-                download="RahmanKarimResume.pdf"
+                href="/assets/Files/Rahman_Karim_Resume.pdf"
+                download="Rahman_Karim_Resume.pdf"
                 style={{ fontSize: "20px", textDecoration: "none" }}
               >
                 My Resume

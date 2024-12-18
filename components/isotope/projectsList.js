@@ -19,6 +19,51 @@ const ProjectList = () => {
         </div>
         <div className="project-item style-two">
           <div
+            className="content"
+            data-aos="fade-right"
+            data-aos-duration={1500}
+            data-aos-offset={50}
+          >
+            <p className="category">
+              Reactjs, Nextjs, Mongodb, Node js, Javascript
+            </p>
+            <h2>
+              <Link target="_blank" href="https://aid-flow.vercel.app/">
+                AidFlow
+              </Link>
+            </h2>
+            <p>
+              AidFlow is an innovative web application designed to provide
+              utility-driven solutions with a focus on efficiency and modern
+              design. Built using React and Next.js, AidFlow leverages
+              cutting-edge technologies to deliver a seamless user experience.
+              With its modular architecture, responsive design, and optimized
+              performance.
+            </p>
+            <Link
+              target="_blank"
+              href="https://aid-flow.vercel.app/"
+              className="details-btn"
+            >
+              <i className="far fa-arrow-right" />
+            </Link>
+          </div>
+          <div
+            className="image"
+            data-aos="fade-left"
+            data-aos-duration={1500}
+            data-aos-offset={50}
+          >
+            <div style={{ backgroundColor: "#781D7D" }}>
+              <img
+                src="assets/images/Websites-banners/aidflow.png"
+                alt="Project List"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="project-item style-two">
+          <div
             className="image"
             data-aos="fade-left"
             data-aos-duration={1500}
@@ -132,7 +177,7 @@ const ProjectList = () => {
             <h2>
               <Link
                 target="_blank"
-                href="https://github.com/Rahmankarim/SmileCrafters"
+                href="https://rahmankarim.github.io/SmileCrafters/"
               >
                 SmileCrafter{" "}
               </Link>
@@ -145,7 +190,7 @@ const ProjectList = () => {
             </p>
             <Link
               target="_blank"
-              href="https://github.com/Rahmankarim/SmileCrafters"
+              href="https://rahmankarim.github.io/SmileCrafters/"
               className="details-btn"
             >
               <i className="far fa-arrow-right" />
@@ -252,7 +297,7 @@ const ProjectList = () => {
             <h2>
               <Link
                 target="_blank"
-                href="https://github.com/Rahmankarim/Gemify"
+                href="https://rahmankarim.github.io/Gemify/"
               >
                 Gemify{" "}
               </Link>
@@ -267,7 +312,7 @@ const ProjectList = () => {
             </p>
             <Link
               target="_blank"
-              href="https://github.com/Rahmankarim/Gemify"
+              href="https://rahmankarim.github.io/Gemify/"
               className="details-btn"
             >
               <i className="far fa-arrow-right" />
